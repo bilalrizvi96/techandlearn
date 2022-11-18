@@ -38,6 +38,7 @@ dependencies:
   firebase_messaging:
   permission_handler:
   email_validator:
+  speech_to_text:
 dev_dependencies:
   flutter_test:
     sdk: flutter

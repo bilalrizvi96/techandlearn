@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+
 import '../../Component/Colors.dart';
 import '../../Controller/SplashController.dart';
 import '../../Services/BaseUrl.dart';
@@ -18,7 +19,7 @@ class SplashScreen extends StatelessWidget {
             body: Container(
               width: width,
               height: height,
-              color: titletextcolor,
+              color: white,
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
@@ -33,7 +34,7 @@ class SplashScreen extends StatelessWidget {
                   Text(
                     'v ${BaseUrl.version}',
                     style: GoogleFonts.poppins(
-                        color: white,
+                        color: black,
                         fontWeight: FontWeight.w300,
                         fontSize: 18),
                   ),
