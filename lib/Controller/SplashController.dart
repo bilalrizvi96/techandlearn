@@ -7,12 +7,10 @@ import '../Routes/Routes.dart';
 import '../Services/BaseUrl.dart';
 
 class SplashController extends GetxController {
-  var updates = false.obs;
-  var url = ''.obs;
+
 
   FirebaseMessaging? _firebaseMessaging;
 
-  var connection = true.obs;
 
   @override
   void onInit() {

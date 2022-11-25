@@ -22,12 +22,7 @@ Future<void> main() async {
     WidgetsFlutterBinding.ensureInitialized();
     GestureBinding.instance.resamplingEnabled = true;
     // HomeWidget.registerBackgroundCallback(backgroundCallback);
-    await Firebase.initializeApp(
-        options: const FirebaseOptions(
-            appId: '1:833414981797:android:4f17b315106ee54a1b054c',
-            apiKey: 'AIzaSyDtqrjtfUH4AX3LNZ7fO7PfZVmBDRQ3z0Y',
-            messagingSenderId: '833414981797',
-            projectId: 'attendancesystem-332409'));
+    await Firebase.initializeApp();
     NotificationSettings settings =
         await FirebaseMessaging.instance.requestPermission(
       alert: true,
