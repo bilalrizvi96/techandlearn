@@ -45,6 +45,7 @@ class LoginScreen extends StatelessWidget {
                     child: Column(
                       children: [
                         TextFormField(
+                          controller: loginController.emailController,
                           validator: (value) => EmailValidator.validate(value!)
                               ? null
                               : "Please enter a valid email",
@@ -61,6 +62,7 @@ class LoginScreen extends StatelessWidget {
                           height: 20,
                         ),
                         TextFormField(
+                          controller: loginController.passwordController,
                           validator: (value) {
                             if (value == null || value.isEmpty) {
                               return 'Please enter your password';
@@ -91,8 +93,23 @@ class LoginScreen extends StatelessWidget {
                           height: 20,
                         ),
                         GestureDetector(
-                          onTap: () {
-                            if (formKey.currentState!.validate()) {}
+                          onTap: () async {
+                            if (formKey.currentState!.validate()) {
+                              try {
+                                final user = await loginController.auth
+                                    .signInWithEmailAndPassword(
+                                    email: loginController
+                                        .emailController.text
+                                        .toString(),
+                                    password: loginController
+                                        .passwordController.text);
+                                if (user != null) {
+                                  Get.offAllNamed(Routes.home);
+                                }
+                              } catch (e) {
+                                print(e);
+                              }
+                            }
                           },
                           child: Container(
                             height: height / 15,

@@ -16,7 +16,7 @@ class Routes {
   static var certification = '/certification';
   static var selectcourse = '/selectcourse';
 
-  static var login = '/signinemp';
+  static var login = '/signin';
   static var registration = '/registration';
 
   final routes = [

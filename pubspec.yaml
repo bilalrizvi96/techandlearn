@@ -30,6 +30,7 @@ dependencies:
   flutter:
     sdk: flutter
   cupertino_icons: ^1.0.2
+  firebase_auth:
   get:
   get_storage:
   delayed_display:

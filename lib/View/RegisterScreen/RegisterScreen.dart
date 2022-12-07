@@ -3,12 +3,13 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:techandlearn/Component/Colors.dart';
-import 'package:techandlearn/Controller/LoginController.dart';
 
+import '../../Controller/RegistrationController.dart';
 import '../../Routes/Routes.dart';
 
 class RegisterScreen extends StatelessWidget {
-  LoginController loginController = Get.put(LoginController());
+  RegistrationController registrationController =
+  Get.put(RegistrationController());
   final formKey = GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {
@@ -19,7 +20,7 @@ class RegisterScreen extends StatelessWidget {
       body: Container(
         padding: const EdgeInsets.all(20),
         child: GetBuilder(
-            init: loginController,
+            init: registrationController,
             builder: (context) {
               return SingleChildScrollView(
                 child: Column(
@@ -44,10 +45,11 @@ class RegisterScreen extends StatelessWidget {
                       child: Column(
                         children: [
                           TextFormField(
+                            controller: registrationController.emailController,
                             validator: (value) =>
-                                EmailValidator.validate(value!)
-                                    ? null
-                                    : "Please enter a valid email",
+                            EmailValidator.validate(value!)
+                                ? null
+                                : "Please enter a valid email",
                             maxLines: 1,
                             keyboardType: TextInputType.emailAddress,
                             decoration: InputDecoration(
@@ -134,6 +136,8 @@ class RegisterScreen extends StatelessWidget {
                             height: 20,
                           ),
                           TextFormField(
+                            controller:
+                            registrationController.passwordController,
                             validator: (value) {
                               if (value == null || value.isEmpty) {
                                 return 'Please enter your password';
@@ -154,8 +158,21 @@ class RegisterScreen extends StatelessWidget {
                             height: 20,
                           ),
                           GestureDetector(
-                            onTap: () {
-                              if (formKey.currentState!.validate()) {}
+                            onTap: () async {
+                              if (formKey.currentState!.validate()) {
+                                final newUser = await registrationController
+                                    .auth
+                                    .createUserWithEmailAndPassword(
+                                    email: registrationController
+                                        .emailController.text
+                                        .toString(),
+                                    password: registrationController
+                                        .passwordController.text
+                                        .toString());
+                                if (newUser != null) {
+                                  Get.offAllNamed(Routes.home);
+                                }
+                              }
                             },
                             child: Container(
                               height: height / 15,
