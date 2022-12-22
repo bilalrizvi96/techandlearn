@@ -34,11 +34,7 @@ class CourseDetailController extends GetxController {
   getCourse() async {
     print('haris');
     // optionList.value.clear();
-    await databaseRef
-        .ref(''
-            '')
-        .onValue
-        .listen((DatabaseEvent event) {
+    await databaseRef.ref('Courses').onValue.listen((DatabaseEvent event) {
       Map<String, dynamic>.from(event.snapshot.value as dynamic)
           .forEach((key, value) {
         optionList.value.add(CourseModel(

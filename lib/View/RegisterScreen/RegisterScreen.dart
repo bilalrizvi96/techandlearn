@@ -124,6 +124,7 @@ class RegisterScreen extends StatelessWidget {
                             },
                             maxLines: 1,
                             keyboardType: TextInputType.phone,
+                            maxLength: 11,
                             decoration: InputDecoration(
                               prefixIcon: const Icon(Icons.contact_mail),
                               hintText: 'Enter your Contact',

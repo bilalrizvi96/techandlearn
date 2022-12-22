@@ -88,9 +88,9 @@ class MyApp extends StatelessWidget {
       title: 'Tech and Learn',
       transitionDuration: Duration(milliseconds: 500),
       debugShowCheckedModeBanner: false,
-      //home: AddCourse(),
-      initialRoute: Routes.splash,
-      getPages: Routes().routes,
+      home: AddCourse(),
+      // initialRoute: Routes.splash,
+      // getPages: Routes().routes,
     );
   }
 }
