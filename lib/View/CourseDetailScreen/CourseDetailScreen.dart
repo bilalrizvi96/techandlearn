@@ -21,7 +21,7 @@ class CourseDetailScreen extends StatelessWidget {
         padding: const EdgeInsets.all(20),
         child: GetBuilder(
             init: courseDetailController,
-            builder: (context) {
+            builder: (_) {
               return Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
@@ -59,12 +59,14 @@ class CourseDetailScreen extends StatelessWidget {
                   ),
                   Expanded(
                     child: ListView.builder(
-                        itemCount: courseDetailController.optionList.length,
+                        itemCount:
+                            courseDetailController.optionList.value.length,
                         itemBuilder: (context, index) {
                           return Padding(
                             padding: const EdgeInsets.all(8.0),
                             child: GestureDetector(
                               onTap: () {
+                                Get.toNamed(Routes.coursevideo);
                                 courseDetailController.courseSelection(index);
                               },
                               child: Container(
@@ -84,7 +86,7 @@ class CourseDetailScreen extends StatelessWidget {
                                 child: Center(
                                   child: Text(
                                     courseDetailController
-                                        .optionList[index].name,
+                                        .optionList.value[index].name,
                                     style: GoogleFonts.poppins(
                                         fontWeight: FontWeight.w300,
                                         fontSize: 20,

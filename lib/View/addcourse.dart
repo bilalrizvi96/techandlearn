@@ -3,11 +3,12 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:techandlearn/Component/Colors.dart';
+import 'package:techandlearn/Services/Database.dart';
 
 import '../../Controller/RegistrationController.dart';
 import '../../Routes/Routes.dart';
 
-class RegisterScreen extends StatelessWidget {
+class AddCourse extends StatelessWidget {
   RegistrationController registrationController =
       Get.put(RegistrationController());
   final formKey = GlobalKey<FormState>();
@@ -31,7 +32,7 @@ class RegisterScreen extends StatelessWidget {
                       height: 20,
                     ),
                     const Text(
-                      'Sign up',
+                      'Add Course',
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
                         fontSize: 40,
@@ -46,14 +47,10 @@ class RegisterScreen extends StatelessWidget {
                         children: [
                           TextFormField(
                             controller: registrationController.emailController,
-                            validator: (value) =>
-                                EmailValidator.validate(value!)
-                                    ? null
-                                    : "Please enter a valid email",
                             maxLines: 1,
                             keyboardType: TextInputType.emailAddress,
                             decoration: InputDecoration(
-                              hintText: 'Enter your email',
+                              hintText: 'Enter your name',
                               prefixIcon: const Icon(
                                 Icons.email,
                               ),
@@ -80,7 +77,7 @@ class RegisterScreen extends StatelessWidget {
                                 Icons.mic,
                                 color: secondarycolor,
                               ),
-                              hintText: 'Enter your Name',
+                              hintText: 'Enter your no of student allow',
                               border: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(10),
                               ),
@@ -104,7 +101,7 @@ class RegisterScreen extends StatelessWidget {
                                 Icons.mic,
                                 color: secondarycolor,
                               ),
-                              hintText: 'Enter your Father Name',
+                              hintText: 'Enter your cost',
                               border: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(10),
                               ),
@@ -126,7 +123,7 @@ class RegisterScreen extends StatelessWidget {
                             keyboardType: TextInputType.phone,
                             decoration: InputDecoration(
                               prefixIcon: const Icon(Icons.contact_mail),
-                              hintText: 'Enter your Contact',
+                              hintText: 'Enter your Time',
                               suffix: Icon(
                                 Icons.mic,
                                 color: secondarycolor,
@@ -139,33 +136,22 @@ class RegisterScreen extends StatelessWidget {
                           const SizedBox(
                             height: 20,
                           ),
-                          TextFormField(
-                            controller:
-                                registrationController.passwordController,
-                            validator: (value) {
-                              if (value == null || value.isEmpty) {
-                                return 'Please enter your password';
-                              }
-                              return null;
-                            },
-                            maxLines: 1,
-                            obscureText: true,
-                            decoration: InputDecoration(
-                              prefixIcon: const Icon(Icons.lock),
-                              hintText: 'Enter your password',
-                              border: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(10),
-                              ),
-                            ),
-                          ),
-                          const SizedBox(
-                            height: 20,
-                          ),
                           GestureDetector(
                             onTap: () async {
-                              if (formKey.currentState!.validate()) {
-                                registrationController.registerationauth();
-                              }
+                              Database().addCourse(
+                                  c_name: registrationController
+                                      .emailController.text
+                                      .toString(),
+                                  cost: registrationController
+                                      .f_nameController.text
+                                      .toString(),
+                                  t_std: registrationController
+                                      .nameController.text
+                                      .toString(),
+                                  time: registrationController
+                                          .contactController.text
+                                          .toString() +
+                                      'hr');
                             },
                             child: Container(
                               height: height / 15,
@@ -175,7 +161,7 @@ class RegisterScreen extends StatelessWidget {
                                   borderRadius: BorderRadius.circular(10.0)),
                               child: Center(
                                 child: Text(
-                                  'Sign in',
+                                  'Add Course',
                                   style: GoogleFonts.poppins(
                                       fontWeight: FontWeight.bold,
                                       color: white),
@@ -185,23 +171,6 @@ class RegisterScreen extends StatelessWidget {
                           ),
                           const SizedBox(
                             height: 20,
-                          ),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              const Text('Already Have a Account?'),
-                              TextButton(
-                                onPressed: () {
-                                  Get.toNamed(Routes.login);
-                                },
-                                child: Text(
-                                  'Sign In',
-                                  style: GoogleFonts.poppins(
-                                      color: black,
-                                      fontWeight: FontWeight.w600),
-                                ),
-                              ),
-                            ],
                           ),
                         ],
                       ),

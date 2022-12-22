@@ -9,6 +9,7 @@ import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 
 import 'Routes/Routes.dart';
+import 'View/addcourse.dart';
 
 Future<void> _firebaseMessagingBackgroundHandler(RemoteMessage message,
     {BuildContext context}) async {
@@ -17,31 +18,34 @@ Future<void> _firebaseMessagingBackgroundHandler(RemoteMessage message,
 }
 
 Future<void> main() async {
+  await GetStorage.init();
+  WidgetsFlutterBinding.ensureInitialized();
+  GestureBinding.instance.resamplingEnabled = true;
 
-    await GetStorage.init();
-    WidgetsFlutterBinding.ensureInitialized();
-    GestureBinding.instance.resamplingEnabled = true;
-   
-    await Firebase.initializeApp
-      (options: FirebaseOptions(apiKey: 'AIzaSyAeELaViOLEJHwdYRmhaYFKqjq1rrnQ2i4', appId:'1:660776089340:android:0c16f839c1b3d33211c979' , messagingSenderId: '660776089340', projectId: 'techlearn-e15a3'));
-    // NotificationSettings settings =
-    //     await FirebaseMessaging.instance.requestPermission(
-    //   alert: true,
-    //   announcement: false,
-    //   badge: true,
-    //   carPlay: false,
-    //   criticalAlert: true,
-    //   provisional: true,
-    //   sound: true,
-    // );
-    // FirebaseMessaging.onBackgroundMessage(_firebaseMessagingBackgroundHandler);
-    // await FirebaseMessaging.instance
-    //     .setForegroundNotificationPresentationOptions(
-    //   alert: true,
-    //   badge: true,
-    //   sound: true,
-    // );
-    await Firebase.initializeApp();
+  await Firebase.initializeApp(
+      options: FirebaseOptions(
+          apiKey: 'AIzaSyAeELaViOLEJHwdYRmhaYFKqjq1rrnQ2i4',
+          appId: '1:660776089340:android:0c16f839c1b3d33211c979',
+          messagingSenderId: '660776089340',
+          projectId: 'techlearn-e15a3'));
+  // NotificationSettings settings =
+  //     await FirebaseMessaging.instance.requestPermission(
+  //   alert: true,
+  //   announcement: false,
+  //   badge: true,
+  //   carPlay: false,
+  //   criticalAlert: true,
+  //   provisional: true,
+  //   sound: true,
+  // );
+  // FirebaseMessaging.onBackgroundMessage(_firebaseMessagingBackgroundHandler);
+  // await FirebaseMessaging.instance
+  //     .setForegroundNotificationPresentationOptions(
+  //   alert: true,
+  //   badge: true,
+  //   sound: true,
+  // );
+  await Firebase.initializeApp();
   // else {
   //   WidgetsFlutterBinding.ensureInitialized();
   //   GestureBinding.instance?.resamplingEnabled = true;
@@ -84,6 +88,7 @@ class MyApp extends StatelessWidget {
       title: 'Tech and Learn',
       transitionDuration: Duration(milliseconds: 500),
       debugShowCheckedModeBanner: false,
+      //home: AddCourse(),
       initialRoute: Routes.splash,
       getPages: Routes().routes,
     );

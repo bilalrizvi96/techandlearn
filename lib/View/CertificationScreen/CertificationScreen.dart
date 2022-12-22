@@ -3,14 +3,15 @@ import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import '../../Component/Colors.dart';
+import '../../Controller/CertificationController.dart';
 import '../../Controller/CourseDetailController.dart';
 import '../../Routes/Routes.dart';
 
 class CertificationScreen extends StatelessWidget {
   CertificationScreen({Key? key}) : super(key: key);
 
-  CourseDetailController courseDetailController =
-      Get.put(CourseDetailController());
+  CertificationController courseDetailController =
+      Get.put(CertificationController());
   @override
   Widget build(BuildContext context) {
     var width = MediaQuery.of(context).size.width;
@@ -21,7 +22,7 @@ class CertificationScreen extends StatelessWidget {
         padding: const EdgeInsets.all(20),
         child: GetBuilder(
             init: courseDetailController,
-            builder: (context) {
+            builder: (_) {
               return Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
@@ -65,6 +66,7 @@ class CertificationScreen extends StatelessWidget {
                             padding: const EdgeInsets.all(8.0),
                             child: GestureDetector(
                               onTap: () {
+                                Get.toNamed(Routes.coursevideo);
                                 courseDetailController.courseSelection(index);
                               },
                               child: Container(

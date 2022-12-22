@@ -5,6 +5,8 @@ import 'package:techandlearn/View/LoginScreen/LoginScreen.dart';
 import 'package:techandlearn/View/RegisterScreen/RegisterScreen.dart';
 import 'package:techandlearn/View/RegistrationCourseScreen/RegistrationCourseScreen.dart';
 
+import '../View/AboutScreen.dart';
+import '../View/CourseVideo.dart';
 import '../View/HomeScreen/HomeScreen.dart';
 import '../View/SplashScreen/SplashScreen.dart';
 
@@ -17,7 +19,9 @@ class Routes {
   static var selectcourse = '/selectcourse';
 
   static var login = '/signin';
+  static var coursevideo = '/coursevideo';
   static var registration = '/registration';
+  static var aboutus = '/aboutus';
 
   final routes = [
     GetPage(
@@ -49,6 +53,14 @@ class Routes {
     GetPage(
         name: selectcourse,
         page: () => CertificationScreen(),
+        transition: Transition.leftToRightWithFade),
+    GetPage(
+        name: aboutus,
+        page: () => AboutScreen(),
+        transition: Transition.leftToRightWithFade),
+    GetPage(
+        name: coursevideo,
+        page: () => CourseVideo(),
         transition: Transition.leftToRightWithFade),
   ];
 }

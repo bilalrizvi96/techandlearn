@@ -8,11 +8,6 @@ class HomeController extends GetxController {
     OptionModel(name: 'Current Course', selected: true),
     OptionModel(name: 'Current Certification Course', selected: false),
     OptionModel(name: 'Self Registration', selected: false),
-    OptionModel(name: 'Course Fee Bill', selected: false),
-    OptionModel(name: 'Certification Fee Bill', selected: false),
-    OptionModel(name: 'Grade History', selected: false),
-    OptionModel(name: 'Course Outline', selected: false),
-    OptionModel(name: 'Certification Course Outline', selected: false),
     OptionModel(name: 'Class Schedule', selected: false),
     OptionModel(name: 'About Us', selected: false),
   ];
@@ -23,6 +18,8 @@ class HomeController extends GetxController {
       Get.toNamed(Routes.certification);
     } else if (index == 2) {
       Get.toNamed(Routes.registrationcourse);
+    } else if (index == 4) {
+      Get.toNamed(Routes.aboutus);
     }
     for (int i = 0; i < optionList.length; i++) {
       if (i == index) {
