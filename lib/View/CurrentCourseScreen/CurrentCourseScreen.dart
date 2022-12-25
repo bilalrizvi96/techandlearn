@@ -103,7 +103,7 @@ class CurrentCourseScreen extends StatelessWidget {
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(15),
                             image: DecorationImage(
-                                image: AssetImage(tileImage),
+                                image: NetworkImage(tileImage),
                                 fit: BoxFit.cover),
                           ),
                           child: Padding(

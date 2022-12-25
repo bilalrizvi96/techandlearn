@@ -5,10 +5,12 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+// import 'package:flutter_stripe/flutter_stripe.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 
 import 'Routes/Routes.dart';
+import 'Services/BaseUrl.dart';
 import 'View/addcourse.dart';
 
 Future<void> _firebaseMessagingBackgroundHandler(RemoteMessage message,
@@ -21,7 +23,8 @@ Future<void> main() async {
   await GetStorage.init();
   WidgetsFlutterBinding.ensureInitialized();
   GestureBinding.instance.resamplingEnabled = true;
-
+  // Stripe.publishableKey = BaseUrl.publishKey;
+  // await Stripe.instance.applySettings();
   await Firebase.initializeApp(
       options: FirebaseOptions(
           apiKey: 'AIzaSyAeELaViOLEJHwdYRmhaYFKqjq1rrnQ2i4',

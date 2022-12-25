@@ -49,7 +49,7 @@ class RegistrationCourseScreen extends StatelessWidget {
               height: height / 50,
             ),
             Text(
-              "Registration",
+              "Registration Course",
               style: GoogleFonts.rajdhani(
                 fontWeight: FontWeight.w400,
                 fontSize: width / 20,
@@ -60,26 +60,6 @@ class RegistrationCourseScreen extends StatelessWidget {
             SizedBox(
               height: height / 50,
             ),
-            // Row(
-            //   crossAxisAlignment: CrossAxisAlignment.center,
-            //   children: [
-            //     Text(
-            //       "Courses",
-            //       style: GoogleFonts.rajdhani(
-            //         fontWeight: FontWeight.w500,
-            //         fontSize: width / 22,
-            //         color: secondarycolor,
-            //         // Colors.black.withOpacity(0.80)
-            //       ),
-            //     ),
-            //     Spacer(),
-            //     Icon(
-            //       Icons.arrow_drop_down_sharp,
-            //       color: primarycolor,
-            //       size: height / 30,
-            //     ),
-            //   ],
-            // ),
             Expanded(
               child: GridView.builder(
                 gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
@@ -87,9 +67,7 @@ class RegistrationCourseScreen extends StatelessWidget {
                 itemCount: 2,
                 itemBuilder: (_, index) => GestureDetector(
                   onTap: () {
-                    // Payment().makePayment(
-                    //     context, double.parse('25'), 1254.toString());
-                    // Get.toNamed(Routes.coursevideo);
+                    Get.toNamed(Routes.registratercourse);
                   },
                   child: Container(
                     height: height / 20,
@@ -100,7 +78,7 @@ class RegistrationCourseScreen extends StatelessWidget {
                       color: Colors.yellow,
                       borderRadius: BorderRadius.circular(15),
                       image: DecorationImage(
-                          image: AssetImage(tileImage), fit: BoxFit.cover),
+                          image: NetworkImage(tileImage), fit: BoxFit.cover),
                     ),
                     child: Padding(
                       padding: EdgeInsets.symmetric(
@@ -109,7 +87,7 @@ class RegistrationCourseScreen extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            "",
+                            index == 0 ? "Course" : 'Certification Course',
                             style: GoogleFonts.poppins(
                               fontWeight: FontWeight.w500,
                               fontSize: width / 30,
@@ -138,84 +116,6 @@ class RegistrationCourseScreen extends StatelessWidget {
             )
           ],
         ),
-        // Column(
-        //   mainAxisAlignment: MainAxisAlignment.start,
-        //   crossAxisAlignment: CrossAxisAlignment.center,
-        //   children: <Widget>[
-        //     Row(
-        //       children: [
-        //         Spacer(),
-        //         Image.asset(
-        //           'assets/logo.png',
-        //           fit: BoxFit.cover,
-        //           height: height / 6,
-        //         ),
-        //         Spacer(),
-        //         GestureDetector(
-        //           onTap: () {
-        //             Get.offAllNamed(Routes.login);
-        //           },
-        //           child: Icon(
-        //             Icons.login,
-        //             color: Colors.red,
-        //             size: width / 15,
-        //           ),
-        //         ),
-        //         SizedBox(
-        //           width: 3,
-        //         )
-        //       ],
-        //     ),
-        //     Text(
-        //       'Register Course',
-        //       style: GoogleFonts.poppins(
-        //         fontWeight: FontWeight.w400,
-        //         fontSize: 40,
-        //       ),
-        //     ),
-        //     SizedBox(
-        //       height: 100,
-        //     ),
-        //     Container(
-        //       width: width,
-        //       height: height / 15,
-        //       decoration: BoxDecoration(
-        //           color: primarycolor.withOpacity(0.34),
-        //           borderRadius: BorderRadius.circular(5.0)),
-        //       child: Center(
-        //         child: Text(
-        //           'Course',
-        //           style: GoogleFonts.poppins(
-        //               fontWeight: FontWeight.w300,
-        //               fontSize: 20,
-        //               color: secondarycolor.withOpacity(0.80)),
-        //         ),
-        //       ),
-        //     ),
-        //     SizedBox(
-        //       height: 13,
-        //     ),
-        //     GestureDetector(
-        //       onTap: () {},
-        //       child: Container(
-        //         width: width,
-        //         height: height / 15,
-        //         decoration: BoxDecoration(
-        //             color: primarycolor.withOpacity(0.34),
-        //             borderRadius: BorderRadius.circular(5.0)),
-        //         child: Center(
-        //           child: Text(
-        //             'Certification Course',
-        //             style: GoogleFonts.poppins(
-        //                 fontWeight: FontWeight.w300,
-        //                 fontSize: 20,
-        //                 color: secondarycolor.withOpacity(0.80)),
-        //           ),
-        //         ),
-        //       ),
-        //     ),
-        //   ],
-        // ),
       ),
     );
   }
