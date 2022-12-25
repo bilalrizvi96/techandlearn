@@ -21,7 +21,7 @@ class RegisterScreen extends StatelessWidget {
         padding: const EdgeInsets.all(20),
         child: GetBuilder(
             init: registrationController,
-            builder: (context) {
+            builder: (_) {
               return SingleChildScrollView(
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -31,7 +31,7 @@ class RegisterScreen extends StatelessWidget {
                       height: 20,
                     ),
                     const Text(
-                      'Sign up',
+                      'Sign In',
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
                         fontSize: 40,
@@ -53,34 +53,22 @@ class RegisterScreen extends StatelessWidget {
                             maxLines: 1,
                             keyboardType: TextInputType.emailAddress,
                             decoration: InputDecoration(
+                              suffix: GestureDetector(
+                                  onTap: () {
+                                    registrationController.valueCheck('email');
+                                  },
+                                  child: Icon(
+                                    registrationController
+                                                .speechEnabled.value ==
+                                            false
+                                        ? Icons.mic
+                                        : Icons.mic,
+                                    color: Colors.blue,
+                                  )),
                               hintText: 'Enter your email',
                               prefixIcon: const Icon(
                                 Icons.email,
                               ),
-                              border: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(10),
-                              ),
-                            ),
-                          ),
-                          const SizedBox(
-                            height: 20,
-                          ),
-                          TextFormField(
-                            controller: registrationController.nameController,
-                            validator: (value) {
-                              if (value == null || value.isEmpty) {
-                                return 'Please enter your Name';
-                              }
-                              return null;
-                            },
-                            maxLines: 1,
-                            decoration: InputDecoration(
-                              prefixIcon: const Icon(Icons.person),
-                              suffix: Icon(
-                                Icons.mic,
-                                color: secondarycolor,
-                              ),
-                              hintText: 'Enter your Name',
                               border: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(10),
                               ),
@@ -100,10 +88,50 @@ class RegisterScreen extends StatelessWidget {
                             maxLines: 1,
                             decoration: InputDecoration(
                               prefixIcon: const Icon(Icons.person),
-                              suffix: Icon(
-                                Icons.mic,
-                                color: secondarycolor,
+                              suffix: GestureDetector(
+                                  onTap: () {
+                                    registrationController.valueCheck('name');
+                                  },
+                                  child: Icon(
+                                    registrationController
+                                                .speechEnabled.value ==
+                                            false
+                                        ? Icons.mic
+                                        : Icons.mic,
+                                    color: Colors.blue,
+                                  )),
+                              hintText: 'Enter your Father Name',
+                              border: OutlineInputBorder(
+                                borderRadius: BorderRadius.circular(10),
                               ),
+                            ),
+                          ),
+                          const SizedBox(
+                            height: 20,
+                          ),
+                          TextFormField(
+                            controller: registrationController.f_nameController,
+                            validator: (value) {
+                              if (value == null || value.isEmpty) {
+                                return 'Please enter your Father Name';
+                              }
+                              return null;
+                            },
+                            maxLines: 1,
+                            decoration: InputDecoration(
+                              prefixIcon: const Icon(Icons.person),
+                              suffix: GestureDetector(
+                                  onTap: () {
+                                    registrationController.valueCheck('fname');
+                                  },
+                                  child: Icon(
+                                    registrationController
+                                                .speechEnabled.value ==
+                                            false
+                                        ? Icons.mic
+                                        : Icons.mic,
+                                    color: Colors.blue,
+                                  )),
                               hintText: 'Enter your Father Name',
                               border: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(10),
@@ -128,10 +156,18 @@ class RegisterScreen extends StatelessWidget {
                             decoration: InputDecoration(
                               prefixIcon: const Icon(Icons.contact_mail),
                               hintText: 'Enter your Contact',
-                              suffix: Icon(
-                                Icons.mic,
-                                color: secondarycolor,
-                              ),
+                              suffix: GestureDetector(
+                                  onTap: () {
+                                    registrationController.valueCheck('number');
+                                  },
+                                  child: Icon(
+                                    registrationController
+                                                .speechEnabled.value ==
+                                            false
+                                        ? Icons.mic
+                                        : Icons.mic,
+                                    color: Colors.blue,
+                                  )),
                               border: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(10),
                               ),

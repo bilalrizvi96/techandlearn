@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:techandlearn/Component/Images.dart';
 import 'package:techandlearn/Controller/HomeController.dart';
 import 'package:techandlearn/Routes/Routes.dart';
 
@@ -22,15 +23,17 @@ class HomeScreen extends StatelessWidget {
             builder: (context) {
               return Column(
                 mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
+                  SizedBox(
+                    height: height / 50,
+                  ),
                   Row(
                     children: [
-                      Spacer(),
                       Image.asset(
                         'assets/logo.png',
                         fit: BoxFit.cover,
-                        height: height / 6,
+                        width: width / 15,
                       ),
                       Spacer(),
                       GestureDetector(
@@ -43,48 +46,125 @@ class HomeScreen extends StatelessWidget {
                           size: width / 15,
                         ),
                       ),
-                      SizedBox(
-                        width: 3,
-                      )
+                    ],
+                  ),
+                  SizedBox(
+                    height: height / 50,
+                  ),
+                  RichText(
+                    text: new TextSpan(
+                      // text: 'Hello ',
+
+                      children: <TextSpan>[
+                        new TextSpan(
+                          text: 'Hello ',
+                          style: GoogleFonts.rajdhani(
+                            fontWeight: FontWeight.w400,
+                            fontSize: width / 22,
+                            color: Colors.black,
+                            // Colors.black.withOpacity(0.80)
+                          ),
+                        ),
+                        new TextSpan(
+                          text: 'Haris,',
+                          style: GoogleFonts.rajdhani(
+                            fontWeight: FontWeight.w400,
+                            fontSize: width / 21,
+                            color: Colors.indigo,
+                            // Colors.black.withOpacity(0.80)
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  SizedBox(
+                    height: height / 50,
+                  ),
+                  Text(
+                    "Select Category",
+                    style: GoogleFonts.rajdhani(
+                      fontWeight: FontWeight.w400,
+                      fontSize: width / 25,
+                      color: Colors.grey,
+                      // Colors.black.withOpacity(0.80)
+                    ),
+                  ),
+                  SizedBox(
+                    height: height / 50,
+                  ),
+                  Row(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      Text(
+                        "Categories",
+                        style: GoogleFonts.rajdhani(
+                          fontWeight: FontWeight.w500,
+                          fontSize: width / 22,
+                          color: secondarycolor,
+                          // Colors.black.withOpacity(0.80)
+                        ),
+                      ),
+                      Spacer(),
+                      Icon(
+                        Icons.arrow_drop_down_sharp,
+                        color: primarycolor,
+                        size: height / 30,
+                      ),
                     ],
                   ),
                   Expanded(
-                    child: ListView.builder(
-                        itemCount: homeController.optionList.length,
-                        itemBuilder: (context, index) {
-                          return Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: GestureDetector(
-                              onTap: () {
-                                homeController.courseSelection(index);
-                              },
-                              child: Container(
-                                width: width,
-                                height: height / 15,
-                                decoration: BoxDecoration(
-                                    color: primarycolor.withOpacity(0.34),
-                                    border: Border.all(
-                                        color: homeController.optionList[index]
-                                                    .selected ==
-                                                true
-                                            ? secondarycolor
-                                            : Colors.transparent,
-                                        width: 3),
-                                    borderRadius: BorderRadius.circular(5.0)),
-                                child: Center(
-                                  child: Text(
-                                    homeController.optionList[index].name,
-                                    style: GoogleFonts.poppins(
-                                        fontWeight: FontWeight.w300,
-                                        fontSize: 20,
-                                        color:
-                                            secondarycolor.withOpacity(0.80)),
+                    child: GridView.builder(
+                      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                          crossAxisCount: 2),
+                      itemCount: homeController.optionList.length,
+                      itemBuilder: (_, index) => GestureDetector(
+                        onTap: () {
+                          homeController.courseSelection(index);
+                        },
+                        child: Container(
+                          height: height / 20,
+                          width: width / 20,
+                          margin: EdgeInsets.only(
+                              right: width / 30, bottom: height / 50),
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(15),
+                            image: DecorationImage(
+                                image: AssetImage(tileImage),
+                                fit: BoxFit.cover),
+                          ),
+                          child: Padding(
+                            padding: EdgeInsets.symmetric(
+                                vertical: height / 50, horizontal: width / 20),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  homeController.optionList[index].name,
+                                  style: GoogleFonts.poppins(
+                                    fontWeight: FontWeight.w500,
+                                    fontSize: width / 30,
+                                    color: Colors.black,
+                                    // Colors.black.withOpacity(0.80)
                                   ),
                                 ),
-                              ),
+                                SizedBox(
+                                  height: height / 80,
+                                ),
+                                Text(
+                                  "Click Here",
+                                  style: GoogleFonts.poppins(
+                                    fontWeight: FontWeight.w500,
+                                    fontSize: width / 40,
+                                    color: primarycolor,
+                                    // Colors.black.withOpacity(0.80)
+                                  ),
+                                ),
+                              ],
                             ),
-                          );
-                        }),
+                          ),
+                        ),
+                      ),
+                    ),
                   )
                 ],
               );

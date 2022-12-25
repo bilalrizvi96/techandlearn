@@ -1,6 +1,6 @@
 import 'package:get/get.dart';
 import 'package:techandlearn/View/CertificationScreen/CertificationScreen.dart';
-import 'package:techandlearn/View/CourseDetailScreen/CourseDetailScreen.dart';
+import 'package:techandlearn/View/CurrentCourseScreen/CurrentCourseScreen.dart';
 import 'package:techandlearn/View/LoginScreen/LoginScreen.dart';
 import 'package:techandlearn/View/RegisterScreen/RegisterScreen.dart';
 import 'package:techandlearn/View/RegistrationCourseScreen/RegistrationCourseScreen.dart';
@@ -29,38 +29,47 @@ class Routes {
     GetPage(
         name: login,
         page: () => LoginScreen(),
-        transition: Transition.leftToRightWithFade),
+        transition: Transition.fadeIn,
+        transitionDuration: Duration(milliseconds: 500)),
     GetPage(
         name: registration,
         page: () => RegisterScreen(),
-        transition: Transition.leftToRightWithFade),
+        transition: Transition.fadeIn,
+        transitionDuration: Duration(milliseconds: 500)),
     GetPage(
         name: home,
         page: () => HomeScreen(),
-        transition: Transition.leftToRightWithFade),
+        transition: Transition.fadeIn,
+        transitionDuration: Duration(milliseconds: 500)),
     GetPage(
         name: coursedetail,
-        page: () => CourseDetailScreen(),
-        transition: Transition.leftToRightWithFade),
+        page: () => CurrentCourseScreen(),
+        transition: Transition.fadeIn,
+        transitionDuration: Duration(milliseconds: 500)),
     GetPage(
         name: registrationcourse,
         page: () => RegistrationCourseScreen(),
-        transition: Transition.leftToRightWithFade),
+        transition: Transition.fadeIn,
+        transitionDuration: Duration(milliseconds: 500)),
     GetPage(
         name: certification,
         page: () => CertificationScreen(),
-        transition: Transition.leftToRightWithFade),
+        transition: Transition.fadeIn,
+        transitionDuration: Duration(milliseconds: 500)),
     GetPage(
         name: selectcourse,
         page: () => CertificationScreen(),
-        transition: Transition.leftToRightWithFade),
+        transition: Transition.fadeIn,
+        transitionDuration: Duration(milliseconds: 500)),
     GetPage(
         name: aboutus,
         page: () => AboutScreen(),
-        transition: Transition.leftToRightWithFade),
+        transition: Transition.fadeIn,
+        transitionDuration: Duration(milliseconds: 500)),
     GetPage(
         name: coursevideo,
         page: () => CourseVideo(),
-        transition: Transition.leftToRightWithFade),
+        transition: Transition.fadeIn,
+        transitionDuration: Duration(milliseconds: 500)),
   ];
 }

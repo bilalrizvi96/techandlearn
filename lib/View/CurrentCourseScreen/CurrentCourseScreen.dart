@@ -4,15 +4,14 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:techandlearn/Component/Images.dart';
 
 import '../../Component/Colors.dart';
-import '../../Controller/CertificationController.dart';
 import '../../Controller/CourseDetailController.dart';
 import '../../Routes/Routes.dart';
 
-class CertificationScreen extends StatelessWidget {
-  CertificationScreen({Key? key}) : super(key: key);
+class CurrentCourseScreen extends StatelessWidget {
+  CurrentCourseScreen({Key? key}) : super(key: key);
 
-  CertificationController courseDetailController =
-      Get.put(CertificationController());
+  CourseDetailController courseDetailController =
+      Get.put(CourseDetailController());
   @override
   Widget build(BuildContext context) {
     var width = MediaQuery.of(context).size.width;
@@ -55,7 +54,7 @@ class CertificationScreen extends StatelessWidget {
                     height: height / 50,
                   ),
                   Text(
-                    "Current Certification Course",
+                    "Select Courses",
                     style: GoogleFonts.rajdhani(
                       fontWeight: FontWeight.w400,
                       fontSize: width / 20,
@@ -70,7 +69,7 @@ class CertificationScreen extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       Text(
-                        "Certification Courses",
+                        "Courses",
                         style: GoogleFonts.rajdhani(
                           fontWeight: FontWeight.w500,
                           fontSize: width / 22,
