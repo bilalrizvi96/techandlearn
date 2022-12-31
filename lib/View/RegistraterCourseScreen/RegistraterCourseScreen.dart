@@ -1,14 +1,15 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import '../../Component/Colors.dart';
 import '../../Controller/PaymentController.dart';
 
 class RegistraterCourseScreen extends StatelessWidget {
-  const RegistraterCourseScreen({Key? key}) : super(key: key);
-
+  RegistraterCourseScreen({Key? key}) : super(key: key);
+  Payment payment = Get.put(Payment());
   @override
   Widget build(BuildContext context) {
     var width = MediaQuery.of(context).size.width;
@@ -21,6 +22,7 @@ class RegistraterCourseScreen extends StatelessWidget {
         padding: EdgeInsets.all(8.0),
         child: GestureDetector(
           onTap: () {
+            // payment.checkOut();
             // Payment().makePayment(context, double.parse('25'), 1254.toString());
           },
           child: Container(
@@ -56,9 +58,8 @@ class RegistraterCourseScreen extends StatelessWidget {
                   width: width,
                 ),
               ),
-              Positioned(
-                top: height / 50,
-                left: width / 30,
+              Padding(
+                padding: const EdgeInsets.only(top: 15.0, left: 15),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [

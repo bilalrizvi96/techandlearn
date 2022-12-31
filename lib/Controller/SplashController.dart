@@ -7,10 +7,7 @@ import '../Routes/Routes.dart';
 import '../Services/BaseUrl.dart';
 
 class SplashController extends GetxController {
-
-
   FirebaseMessaging? _firebaseMessaging;
-
 
   @override
   void onInit() {
@@ -94,8 +91,12 @@ class SplashController extends GetxController {
   }
 
   checks() {
-    Future.delayed(new Duration(milliseconds: 2000), () {
-      Get.offNamed(Routes.login);
+    Future.delayed(new Duration(seconds: 8), () {
+      if (BaseUrl.storage.read('token') == 'yes') {
+        Get.offNamed(Routes.home);
+      } else {
+        Get.offNamed(Routes.login);
+      }
     });
   }
 

@@ -92,7 +92,7 @@ class MyApp extends StatelessWidget {
       transitionDuration: Duration(milliseconds: 500),
       debugShowCheckedModeBanner: false,
       // home: AddCourse(),
-      initialRoute: Routes.home,
+      initialRoute: Routes.splash,
       getPages: Routes().routes,
     );
   }

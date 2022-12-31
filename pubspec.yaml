@@ -42,7 +42,8 @@ dependencies:
   speech_to_text:
   firebase_database:
   youtube_player_flutter:
-  flutter_stripe: ^6.0.0
+#  razorpay_flutter:
+ # flutter_stripe: ^6.0.0
 dev_dependencies:
   flutter_test:
     sdk: flutter

@@ -10,6 +10,7 @@ class RegistrationController extends GetxController {
   final auth = FirebaseAuth.instance;
   var emailController = TextEditingController();
   var passwordController = TextEditingController();
+  var c_passwordController = TextEditingController();
   var f_nameController = TextEditingController();
   var contactController = TextEditingController();
   var nameController = TextEditingController();
@@ -88,11 +89,28 @@ class RegistrationController extends GetxController {
   }
 
   registerationauth() async {
-    final newUser = await auth.createUserWithEmailAndPassword(
-        email: emailController.text.toString(),
-        password: passwordController.text.toString());
-    if (newUser != null) {
-      addStudent();
+    if (passwordController.text == c_passwordController.text) {
+      final newUser = await auth.createUserWithEmailAndPassword(
+          email: emailController.text.toString(),
+          password: passwordController.text.toString());
+      if (newUser != null) {
+        addStudent();
+        Get.snackbar(
+          'Success',
+          "Register Successfully",
+          colorText: Colors.white,
+          backgroundColor: Colors.lightBlue,
+          icon: const Icon(Icons.add_alert),
+        );
+      }
+    } else {
+      Get.snackbar(
+        'Error',
+        "Password didn't match",
+        colorText: Colors.white,
+        backgroundColor: Colors.red,
+        icon: const Icon(Icons.add_alert),
+      );
     }
   }
 
@@ -102,6 +120,6 @@ class RegistrationController extends GetxController {
         f_name: f_nameController.text.toString(),
         password: passwordController.text.toString(),
         s_name: nameController.text.toString());
-    Get.offAllNamed(Routes.home);
+    Get.offAllNamed(Routes.login);
   }
 }

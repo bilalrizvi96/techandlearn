@@ -6,6 +6,7 @@ import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:techandlearn/Component/Colors.dart';
 import 'package:techandlearn/Controller/LoginController.dart';
+import 'package:techandlearn/Services/BaseUrl.dart';
 
 import '../../Routes/Routes.dart';
 
@@ -138,10 +139,44 @@ class LoginScreen extends StatelessWidget {
                                               password: loginController
                                                   .passwordController.text);
                                       if (user != null) {
+                                        if (loginController.rememberValue) {
+                                          BaseUrl.storage.write('token', 'yes');
+                                        } else {
+                                          BaseUrl.storage.write('token', 'no');
+                                        }
+
+                                        Get.snackbar(
+                                          'Success',
+                                          "Display the message here",
+                                          colorText: Colors.white,
+                                          backgroundColor: Colors.lightBlue,
+                                          icon: const Icon(Icons.done),
+                                        );
                                         Get.offAllNamed(Routes.home);
+                                      } else {
+                                        Get.snackbar(
+                                          'Error',
+                                          "Something went wrong",
+                                          colorText: Colors.white,
+                                          backgroundColor: Colors.red,
+                                          icon: const Icon(Icons.add_alert),
+                                        );
                                       }
                                     } catch (e) {
                                       print(e);
+                                      Get.snackbar(
+                                        'Error',
+                                        e
+                                            .toString()
+                                            .replaceFirst('[', '')
+                                            .replaceFirst(']', '')
+                                            .replaceFirst(
+                                                'firebase_auth/user-not-found',
+                                                ''),
+                                        colorText: Colors.white,
+                                        backgroundColor: Colors.red,
+                                        icon: const Icon(Icons.add_alert),
+                                      );
                                     }
                                   }
                                 },

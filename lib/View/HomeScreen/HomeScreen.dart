@@ -65,15 +65,15 @@ class HomeScreen extends StatelessWidget {
                             // Colors.black.withOpacity(0.80)
                           ),
                         ),
-                        new TextSpan(
-                          text: 'Haris,',
-                          style: GoogleFonts.rajdhani(
-                            fontWeight: FontWeight.w400,
-                            fontSize: width / 21,
-                            color: Colors.indigo,
-                            // Colors.black.withOpacity(0.80)
-                          ),
-                        ),
+                        // new TextSpan(
+                        //   text: 'Haris,',
+                        //   style: GoogleFonts.rajdhani(
+                        //     fontWeight: FontWeight.w400,
+                        //     fontSize: width / 21,
+                        //     color: Colors.indigo,
+                        //     // Colors.black.withOpacity(0.80)
+                        //   ),
+                        // ),
                       ],
                     ),
                   ),

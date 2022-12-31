@@ -27,7 +27,7 @@ class SplashScreen extends StatelessWidget {
                   Spacer(),
                   Image.asset(
                     'assets/logo.png',
-                    fit: BoxFit.cover,
+                    fit: BoxFit.contain,
                     height: height / 4,
                   ),
                   Spacer(),
