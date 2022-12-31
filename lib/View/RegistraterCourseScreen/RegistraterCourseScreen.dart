@@ -10,6 +10,7 @@ import '../../Controller/PaymentController.dart';
 class RegistraterCourseScreen extends StatelessWidget {
   RegistraterCourseScreen({Key? key}) : super(key: key);
   Payment payment = Get.put(Payment());
+  var val = Get.arguments;
   @override
   Widget build(BuildContext context) {
     var width = MediaQuery.of(context).size.width;
@@ -53,7 +54,7 @@ class RegistraterCourseScreen extends StatelessWidget {
               Opacity(
                 opacity: 0.5,
                 child: Image.network(
-                  'https://images.pexels.com/photos/8460453/pexels-photo-8460453.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+                  val[6],
                   fit: BoxFit.contain,
                   width: width,
                 ),
@@ -86,12 +87,40 @@ class RegistraterCourseScreen extends StatelessWidget {
                     SizedBox(
                       height: height / 40,
                     ),
-                    Text(
-                      'OOP',
-                      style: GoogleFonts.rajdhani(
-                          fontWeight: FontWeight.w700,
-                          fontSize: width / 20,
-                          color: Colors.white),
+                    Row(
+                      children: [
+                        Text(
+                          val[5],
+                          style: GoogleFonts.rajdhani(
+                              fontWeight: FontWeight.w700,
+                              fontSize: width / 20,
+                              color: Colors.white),
+                        ),
+                        Spacer(),
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: [
+                            Text(
+                              val[3].toString().toUpperCase(),
+                              style: GoogleFonts.rajdhani(
+                                  fontWeight: FontWeight.w700,
+                                  fontSize: width / 20,
+                                  color: Colors.white),
+                            ),
+                            Text(
+                              val[4] + ' PM',
+                              style: GoogleFonts.rajdhani(
+                                  fontWeight: FontWeight.w700,
+                                  fontSize: width / 20,
+                                  color: Colors.white),
+                            ),
+                          ],
+                        ),
+                        SizedBox(
+                          width: 10,
+                        )
+                      ],
                     ),
                     SizedBox(
                       height: height / 50,
@@ -107,7 +136,7 @@ class RegistraterCourseScreen extends StatelessWidget {
                           width: width / 50,
                         ),
                         Text(
-                          '12',
+                          val[2].toString(),
                           style: GoogleFonts.poppins(
                               fontWeight: FontWeight.w300,
                               fontSize: width / 32,
@@ -122,7 +151,7 @@ class RegistraterCourseScreen extends StatelessWidget {
                       children: [
                         Spacer(),
                         Text(
-                          '\$ 75',
+                          '\$ ' + val[0].toString(),
                           style: GoogleFonts.rajdhani(
                               fontWeight: FontWeight.w400,
                               fontSize: width / 20,
@@ -161,7 +190,7 @@ class RegistraterCourseScreen extends StatelessWidget {
                           ),
                         ),
                         Text(
-                          "\nIn this course how to create online course websites like Coursera & Skillshare or any other online course website with tutor lms plugin. You will learn how you can create an online course website for FREE. You do not require any coding to build a website. You just need to do Drag & Drop.\n\nAll plugins & theme used for making this website is completely Free. We will use page builders to design and customize our website to make it look more professional.\n\nYou can create unlimited courses. Inside the course, you can add lessons (both video & article) and quizzes. Other instructors can also join your website and make courses in return you can take a commission from them like Udemy.\n This website will be completely user-friendly on both mobile and desktop this will conform to your visitors. The interface of this website will be very smooth and lead to more easily sales of any paid course.",
+                          val[1],
                           style: GoogleFonts.poppins(
                             fontWeight: FontWeight.w300,
                             fontSize: width / 35,

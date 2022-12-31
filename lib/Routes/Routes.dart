@@ -7,6 +7,9 @@ import 'package:techandlearn/View/RegistraterCourseScreen/RegistraterCourseScree
 import 'package:techandlearn/View/RegistrationCourseScreen/RegistrationCourseScreen.dart';
 
 import '../View/AboutScreen.dart';
+import '../View/AllCertificationScreen/AllCertificationScreen.dart';
+import '../View/AllCourseScreen/AllCourseScreen.dart';
+import '../View/ClassScheduleScreen/ClassScheduleScreen.dart';
 import '../View/CourseVideo.dart';
 import '../View/HomeScreen/HomeScreen.dart';
 import '../View/SplashScreen/SplashScreen.dart';
@@ -23,6 +26,9 @@ class Routes {
   static var coursevideo = '/coursevideo';
   static var registration = '/registration';
   static var aboutus = '/aboutus';
+  static var allcourse = '/allcourse';
+  static var allc_course = '/allc_course';
+  static var schedue = '/schedue';
 
   final routes = [
     GetPage(
@@ -75,6 +81,21 @@ class Routes {
     GetPage(
         name: registratercourse,
         page: () => RegistraterCourseScreen(),
+        transition: Transition.fadeIn,
+        transitionDuration: Duration(milliseconds: 500)),
+    GetPage(
+        name: allcourse,
+        page: () => AllCourseScreen(),
+        transition: Transition.fadeIn,
+        transitionDuration: Duration(milliseconds: 500)),
+    GetPage(
+        name: allc_course,
+        page: () => AllCertificationScreen(),
+        transition: Transition.fadeIn,
+        transitionDuration: Duration(milliseconds: 500)),
+    GetPage(
+        name: schedue,
+        page: () => ClassScheduleScreen(),
         transition: Transition.fadeIn,
         transitionDuration: Duration(milliseconds: 500)),
   ];

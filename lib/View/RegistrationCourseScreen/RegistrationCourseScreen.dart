@@ -67,7 +67,11 @@ class RegistrationCourseScreen extends StatelessWidget {
                 itemCount: 2,
                 itemBuilder: (_, index) => GestureDetector(
                   onTap: () {
-                    Get.toNamed(Routes.registratercourse);
+                    if (index == 0) {
+                      Get.toNamed(Routes.allcourse);
+                    } else {
+                      Get.toNamed(Routes.allc_course);
+                    }
                   },
                   child: Container(
                     height: height / 20,

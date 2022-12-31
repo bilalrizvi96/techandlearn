@@ -24,7 +24,11 @@ class CertificationController extends GetxController {
           .forEach((key, value) {
         optionList.value.add(CourseModel(
             time: value['time'],
-            cost: value['cost'],
+            day: value['days'],
+            description: value['description'],
+            price: value['price'],
+            thumbnail: value['thumbnail'],
+            // cost: value['cost'],
             totalstudent: value['totalstd'],
             name: value['c_name'],
             selected: false));

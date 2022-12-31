@@ -1,9 +1,20 @@
 class CourseModel {
   var name;
-  var cost;
   var time;
   var totalstudent;
   var selected;
-  CourseModel(
-      {this.cost, this.name, this.time, this.totalstudent, this.selected});
+  var day;
+  var price;
+  var description;
+  var thumbnail;
+  CourseModel({
+    this.name,
+    this.time,
+    this.thumbnail,
+    this.totalstudent,
+    this.selected,
+    this.day,
+    this.description,
+    this.price,
+  });
 }

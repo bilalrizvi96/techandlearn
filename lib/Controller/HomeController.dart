@@ -18,6 +18,8 @@ class HomeController extends GetxController {
       Get.toNamed(Routes.certification);
     } else if (index == 2) {
       Get.toNamed(Routes.registrationcourse);
+    } else if (index == 3) {
+      Get.toNamed(Routes.schedue);
     } else if (index == 4) {
       Get.toNamed(Routes.aboutus);
     }
