@@ -6,6 +6,7 @@ import 'package:techandlearn/Controller/HomeController.dart';
 import 'package:techandlearn/Routes/Routes.dart';
 
 import '../../Component/Colors.dart';
+import '../../Services/BaseUrl.dart';
 
 class HomeScreen extends StatelessWidget {
   HomeScreen({Key? key}) : super(key: key);
@@ -65,15 +66,18 @@ class HomeScreen extends StatelessWidget {
                             // Colors.black.withOpacity(0.80)
                           ),
                         ),
-                        // new TextSpan(
-                        //   text: 'Haris,',
-                        //   style: GoogleFonts.rajdhani(
-                        //     fontWeight: FontWeight.w400,
-                        //     fontSize: width / 21,
-                        //     color: Colors.indigo,
-                        //     // Colors.black.withOpacity(0.80)
-                        //   ),
-                        // ),
+                        new TextSpan(
+                          text: BaseUrl.storage
+                              .read("name")
+                              .toString()
+                              .toUpperCase(),
+                          style: GoogleFonts.rajdhani(
+                            fontWeight: FontWeight.w400,
+                            fontSize: width / 21,
+                            color: Colors.indigo,
+                            // Colors.black.withOpacity(0.80)
+                          ),
+                        ),
                       ],
                     ),
                   ),

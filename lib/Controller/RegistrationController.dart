@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -115,10 +117,12 @@ class RegistrationController extends GetxController {
   }
 
   addStudent() {
+    var semester = Random().nextInt(8);
     Database().addStudent(
         contact: contactController.text.toString(),
         f_name: f_nameController.text.toString(),
         password: passwordController.text.toString(),
+        semester: semester.toString(),
         s_name: nameController.text.toString());
     Get.offAllNamed(Routes.login);
   }

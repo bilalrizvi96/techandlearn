@@ -12,13 +12,20 @@ class Database {
     databaseRef.child('CertificationCourses').push().set(data);
   }
 
-  addStudent({var s_name, var f_name, var password, var contact}) {
+  addStudent(
+      {var s_name, var f_name, var password, var contact, var semester}) {
     var data = {
       's_name': s_name,
       'f_name': f_name,
       'password': password,
-      'contact': contact
+      'contact': contact,
+      'semester': semester
     };
     databaseRef.child('Student').push().set(data);
+  }
+
+  regUser({var c_name, var uuid}) {
+    var data = {'c_name': c_name, 'uuid': uuid};
+    databaseRef.child('RegCourse').push().set(data);
   }
 }

@@ -89,7 +89,7 @@ class CurrentCourseScreen extends StatelessWidget {
                     child: GridView.builder(
                       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                           crossAxisCount: 2),
-                      itemCount: courseDetailController.optionList.value.length,
+                      itemCount: courseDetailController.regList.value.length,
                       itemBuilder: (_, index) => GestureDetector(
                         onTap: () {
                           Get.toNamed(Routes.coursevideo);
@@ -114,7 +114,7 @@ class CurrentCourseScreen extends StatelessWidget {
                               children: [
                                 Text(
                                   courseDetailController
-                                      .optionList.value[index].name,
+                                      .regList.value[index].name,
                                   style: GoogleFonts.poppins(
                                     fontWeight: FontWeight.w500,
                                     fontSize: width / 30,

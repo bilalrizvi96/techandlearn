@@ -105,11 +105,30 @@
 //     //     amount: newAmount, membershipId: membershipId, transactionId: id);
 //   }
 // }
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+
+import '../Routes/Routes.dart';
+import '../Services/Database.dart';
 // import 'package:razorpay_flutter/razorpay_flutter.dart';
 
 class Payment extends GetxController {
+  final user = FirebaseAuth.instance.currentUser;
+  var val = Get.arguments;
+  regCourse() {
+    Database().regUser(c_name: val[5], uuid: user!.uid.toString());
+    Get.snackbar(
+      'Success',
+      "Course Register Successfully",
+      colorText: Colors.white,
+      backgroundColor: Colors.lightBlue,
+      icon: const Icon(Icons.add_alert),
+    );
+    Get.offNamed(Routes.home);
+  }
+
   // var razorpay = Razorpay();
   //
   // @override

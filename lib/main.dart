@@ -54,7 +54,7 @@ Future<void> main() async {
   //   GestureBinding.instance?.resamplingEnabled = true;
   //   WidgetsFlutterBinding.ensureInitialized();
   //   await Firebase.initializeApp();
-  //   await GetStorage.init();
+  //
   //   NotificationSettings settings =
   //       await FirebaseMessaging.instance.requestPermission(
   //     alert: true,
