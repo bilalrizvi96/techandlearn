@@ -103,6 +103,7 @@ class AllCertificationScreen extends StatelessWidget {
                             courseDetailController.optionList[index].name, //5
                             courseDetailController
                                 .optionList[index].thumbnail, //6
+                            1
                           ]);
                           courseDetailController.courseSelection(index);
                         },

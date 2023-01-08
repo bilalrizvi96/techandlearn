@@ -123,7 +123,8 @@ class RegistrationController extends GetxController {
         f_name: f_nameController.text.toString(),
         password: passwordController.text.toString(),
         semester: semester.toString(),
-        s_name: nameController.text.toString());
+        s_name: nameController.text.toString(),
+        email: emailController.text.toString());
     Get.offAllNamed(Routes.login);
   }
 }

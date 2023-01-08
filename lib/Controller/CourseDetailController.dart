@@ -31,7 +31,7 @@ class CourseDetailController extends GetxController {
     videoMetaData2 = YoutubePlayerController(
       initialVideoId: 'zrsqhcVpaE0',
       flags: YoutubePlayerFlags(
-        autoPlay: true,
+        autoPlay: false,
         mute: true,
       ),
     );
@@ -50,14 +50,14 @@ class CourseDetailController extends GetxController {
                 .forEach((key, value1) {
               if (value['c_name'] == value1['c_name']) {
                 regList.value.add(CourseModel(
-                    time: value['time'],
-                    day: value['days'],
-                    description: value['description'],
-                    price: value['price'],
-                    thumbnail: value['thumbnail'],
+                    time: value1['time'],
+                    day: value1['days'],
+                    description: value1['description'],
+                    price: value1['price'],
+                    thumbnail: value1['thumbnail'],
                     // cost: value['cost'],
-                    totalstudent: value['totalstd'],
-                    name: value['c_name'],
+                    totalstudent: value1['totalstd'],
+                    name: value1['c_name'],
                     selected: false));
                 update();
               }
@@ -73,11 +73,14 @@ class CourseDetailController extends GetxController {
 
   getCourse() async {
     print('haris');
+    print(BaseUrl.storage.read('semester'));
     // optionList.value.clear();
     await databaseRef.ref('Courses').onValue.listen((DatabaseEvent event) {
       Map<String, dynamic>.from(event.snapshot.value as dynamic)
           .forEach((key, value) {
-        if (BaseUrl.storage.read('semester') == value['semester']) {
+        if (value['semester'] == BaseUrl.storage.read('semester')) {
+          print(BaseUrl.storage.read('semester'));
+          print(value['semester']);
           optionList.value.add(CourseModel(
               time: value['time'],
               day: value['days'],

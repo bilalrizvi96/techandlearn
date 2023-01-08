@@ -39,6 +39,7 @@ class HomeScreen extends StatelessWidget {
                       Spacer(),
                       GestureDetector(
                         onTap: () {
+                          BaseUrl.storage.erase();
                           Get.offAllNamed(Routes.login);
                         },
                         child: Icon(

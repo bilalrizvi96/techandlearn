@@ -86,60 +86,66 @@ class CurrentCourseScreen extends StatelessWidget {
                     ],
                   ),
                   Expanded(
-                    child: GridView.builder(
-                      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                          crossAxisCount: 2),
-                      itemCount: courseDetailController.regList.value.length,
-                      itemBuilder: (_, index) => GestureDetector(
-                        onTap: () {
-                          Get.toNamed(Routes.coursevideo);
-                          courseDetailController.courseSelection(index);
-                        },
-                        child: Container(
-                          height: height / 20,
-                          width: width / 20,
-                          margin: EdgeInsets.only(
-                              right: width / 30, bottom: height / 50),
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(15),
-                            image: DecorationImage(
-                                image: NetworkImage(tileImage),
-                                fit: BoxFit.cover),
-                          ),
-                          child: Padding(
-                            padding: EdgeInsets.symmetric(
-                                vertical: height / 50, horizontal: width / 20),
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text(
-                                  courseDetailController
-                                      .regList.value[index].name,
-                                  style: GoogleFonts.poppins(
-                                    fontWeight: FontWeight.w500,
-                                    fontSize: width / 30,
-                                    color: Colors.black,
-                                    // Colors.black.withOpacity(0.80)
+                    child: courseDetailController.regList.isNotEmpty
+                        ? GridView.builder(
+                            gridDelegate:
+                                SliverGridDelegateWithFixedCrossAxisCount(
+                                    crossAxisCount: 2),
+                            itemCount:
+                                courseDetailController.regList.value.length,
+                            itemBuilder: (_, index) => GestureDetector(
+                              onTap: () {
+                                Get.toNamed(Routes.coursevideo);
+                                courseDetailController.courseSelection(index);
+                              },
+                              child: Container(
+                                height: height / 20,
+                                width: width / 20,
+                                margin: EdgeInsets.only(
+                                    right: width / 30, bottom: height / 50),
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(15),
+                                  image: DecorationImage(
+                                      image: NetworkImage(tileImage),
+                                      fit: BoxFit.cover),
+                                ),
+                                child: Padding(
+                                  padding: EdgeInsets.symmetric(
+                                      vertical: height / 50,
+                                      horizontal: width / 20),
+                                  child: Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      Text(
+                                        courseDetailController
+                                            .regList.value[index].name,
+                                        style: GoogleFonts.poppins(
+                                          fontWeight: FontWeight.w500,
+                                          fontSize: width / 30,
+                                          color: Colors.black,
+                                          // Colors.black.withOpacity(0.80)
+                                        ),
+                                      ),
+                                      SizedBox(
+                                        height: height / 80,
+                                      ),
+                                      Text(
+                                        "Click Here",
+                                        style: GoogleFonts.poppins(
+                                          fontWeight: FontWeight.w500,
+                                          fontSize: width / 40,
+                                          color: primarycolor,
+                                          // Colors.black.withOpacity(0.80)
+                                        ),
+                                      ),
+                                    ],
                                   ),
                                 ),
-                                SizedBox(
-                                  height: height / 80,
-                                ),
-                                Text(
-                                  "Click Here",
-                                  style: GoogleFonts.poppins(
-                                    fontWeight: FontWeight.w500,
-                                    fontSize: width / 40,
-                                    color: primarycolor,
-                                    // Colors.black.withOpacity(0.80)
-                                  ),
-                                ),
-                              ],
+                              ),
                             ),
-                          ),
-                        ),
-                      ),
-                    ),
+                          )
+                        : Center(child: Text("No Course Register")),
                   )
                 ],
               );

@@ -22,6 +22,7 @@ class ClassScheduleScreen extends StatelessWidget {
         child: GetBuilder(
             init: courseDetailController,
             builder: (_) {
+              print(courseDetailController.regList.value[0].description);
               return Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -85,60 +86,64 @@ class ClassScheduleScreen extends StatelessWidget {
                   //   ],
                   // ),
                   Expanded(
-                    child: ListView.builder(
-                      itemCount: courseDetailController.optionList.value.length,
-                      itemBuilder: (_, index) => ExpansionTile(
-                        title:
-                            Text(courseDetailController.optionList[index].name),
-                        expandedAlignment: Alignment.centerLeft,
-                        childrenPadding: EdgeInsets.only(left: 20.0),
-                        children: <Widget>[
-                          Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Row(
-                                children: [
-                                  Text('Days:'),
-                                  Spacer(),
-                                  Text(
-                                    courseDetailController.optionList[index].day
-                                        .toString()
-                                        .replaceAll(',', ' ')
-                                        .toUpperCase(),
-                                    style: GoogleFonts.rajdhani(
-                                        fontSize: 15,
-                                        fontWeight: FontWeight.w300),
-                                  ),
-                                ],
-                              ),
-                              SizedBox(
-                                height: 10,
-                              ),
-                              Row(
-                                children: [
-                                  Text('Time:'),
-                                  Spacer(),
-                                  Text(
-                                    courseDetailController
-                                        .optionList[index].time
-                                        .toString()
-                                        .replaceAll(',', '')
-                                        .toUpperCase(),
-                                    style: GoogleFonts.rajdhani(
-                                        fontSize: 15,
-                                        fontWeight: FontWeight.w300),
-                                  ),
-                                ],
-                              ),
-                              SizedBox(
-                                height: 15,
-                              ),
-                            ],
-                          ),
-                        ],
-                      ),
-                    ),
+                    child: courseDetailController.regList.value.isNotEmpty
+                        ? ListView.builder(
+                            itemCount:
+                                courseDetailController.regList.value.length,
+                            itemBuilder: (_, index) => ExpansionTile(
+                              title: Text(
+                                  courseDetailController.regList[index].name),
+                              expandedAlignment: Alignment.centerLeft,
+                              childrenPadding: EdgeInsets.only(left: 20.0),
+                              children: <Widget>[
+                                Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Row(
+                                      children: [
+                                        Text('Days:'),
+                                        Spacer(),
+                                        Text(
+                                          courseDetailController
+                                              .regList.value[index].day
+                                              .toString()
+                                              .replaceAll(',', ' ')
+                                              .toUpperCase(),
+                                          style: GoogleFonts.rajdhani(
+                                              fontSize: 15,
+                                              fontWeight: FontWeight.w300),
+                                        ),
+                                      ],
+                                    ),
+                                    SizedBox(
+                                      height: 10,
+                                    ),
+                                    Row(
+                                      children: [
+                                        Text('Time:'),
+                                        Spacer(),
+                                        Text(
+                                          courseDetailController
+                                              .regList[index].time
+                                              .toString()
+                                              .replaceAll(',', '')
+                                              .toUpperCase(),
+                                          style: GoogleFonts.rajdhani(
+                                              fontSize: 15,
+                                              fontWeight: FontWeight.w300),
+                                        ),
+                                      ],
+                                    ),
+                                    SizedBox(
+                                      height: 15,
+                                    ),
+                                  ],
+                                ),
+                              ],
+                            ),
+                          )
+                        : Center(child: Text("No Course Register")),
                   )
                 ],
               );

@@ -102,6 +102,7 @@ class AllCourseScreen extends StatelessWidget {
                             courseDetailController.optionList[index].name, //5
                             courseDetailController
                                 .optionList[index].thumbnail, //6
+                            0
                           ]);
                           courseDetailController.courseSelection(index);
                         },

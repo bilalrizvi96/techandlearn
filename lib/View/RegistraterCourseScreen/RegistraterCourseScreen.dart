@@ -23,7 +23,7 @@ class RegistraterCourseScreen extends StatelessWidget {
         padding: EdgeInsets.all(8.0),
         child: GestureDetector(
           onTap: () {
-            payment.regCourse();
+            payment.regCourse(val[7]);
             // payment.checkOut();
             // Payment().makePayment(context, double.parse('25'), 1254.toString());
           },

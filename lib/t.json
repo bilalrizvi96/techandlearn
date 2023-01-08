@@ -3,16 +3,24 @@
     "-NIxj4xSCilaTcaS6Kt4": {
       "c_name": "Cloud Computing",
       "days": "friday,thursday",
-      "description": "description",
+      "description": "Simply put, cloud computing is the delivery of computing services—including servers, storage, databases, networking, software, analytics, and intelligence  ",
       "price": 12,
       "thumbnail": "https://images.pexels.com/photos/8460453/pexels-photo-8460453.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
       "time": "12:30",
       "totalstd": "3"
+    },  "-NIxj4xSCilaTcaS6Kt3": {
+      "c_name": "Edge Computing",
+      "days": "friday,thursday",
+      "description": "Edge computing is a distributed information technology (IT) architecture in which client data is processed at the periphery of the network,",
+      "price": 5,
+      "thumbnail": "https://images.pexels.com/photos/8460453/pexels-photo-8460453.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+      "time": "11:30",
+      "totalstd": "5"
     },
     "-NIxj6RID4UqaQ2dg_j7": {
       "c_name": "SalesForce admin",
       "days": "monday,tuesday,friday",
-      "description": "description",
+      "description": "Personalize every experience along the customer journey with the Customer 360. Unify marketing, sales, service, commerce, and IT on the world's #1 CRM.",
       "price": 12,
       "thumbnail": "https://images.pexels.com/photos/8460453/pexels-photo-8460453.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
       "time": "12:30",
@@ -21,7 +29,7 @@
     "-NIxjEGBrtfxzV8YG6QB": {
       "c_name": "Big Data",
       "days": "friday,thursday",
-      "description": "description",
+      "description": "Big data is a combination of structured, semistructured and unstructured data collected by organizations that can be mined for information and used in machine learning projects, predictive modeling and other advanced analytics applications.",
       "price": 12,
       "thumbnail": "https://images.pexels.com/photos/8460453/pexels-photo-8460453.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
       "time": "12:30",
@@ -30,7 +38,7 @@
     "-NIxjIYPuSHC2rgH6h1D": {
       "c_name": "Matlab",
       "days": "friday,thursday",
-      "description": "description",
+      "description": "MATLAB is a programming and numeric computing platform used by millions of engineers and scientists to analyze data, develop algorithms, and create models.",
       "price": 12,
       "thumbnail": "https://images.pexels.com/photos/8460453/pexels-photo-8460453.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
       "time": "12:30",
@@ -39,7 +47,7 @@
     "-NJzEivOOY9qivrq_Lcp": {
       "c_name": "operating system",
       "days": "monday,tuesday,friday",
-      "description": "description",
+      "description": "An operating system (OS) is the program that, after being initially loaded into the computer by a boot program, manages all of the other application programs in a computer. ",
       "price": 12,
       "thumbnail": "https://images.pexels.com/photos/8460453/pexels-photo-8460453.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
       "time": "12:30",
@@ -49,10 +57,10 @@
   "Courses": {
     "-NIxQy-HyaodKIVKlgfE": {
       "c_name": "Operating System",
-      "semester": "1",
       "days": "monday,tuesday,friday",
-      "description": "orem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+      "description": "An operating system (OS) is the program that, after being initially loaded into the computer by a boot program, manages all of the other application programs in a computer. .",
       "price": 12,
+      "semester": "1",
       "thumbnail": "https://images.pexels.com/photos/8460453/pexels-photo-8460453.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
       "time": "12:30",
       "totalstd": "4",
@@ -62,9 +70,9 @@
     "-NIxRRmkruH7NcJr-nT-": {
       "c_name": "DM",
       "days": "friday,thursday",
-      "semester": "2",
-      "description": "description",
+      "description": "Discrete mathematics is the study of mathematical structures that can be considered \"discrete rather than \"continuous\" (analogously to continuous functions) .",
       "price": 12,
+      "semester": "2",
       "thumbnail": "https://cdn6.f-cdn.com/contestentries/1162950/18299824/59ef996d1981d_thumb900.jpg",
       "time": "1:00",
       "totalstd": "4",
@@ -74,9 +82,9 @@
     "-NIxSQEG00qSAz7vR6TO": {
       "c_name": "IICT",
       "days": "friday,",
-      "semester": "1",
-      "description": "description",
+      "description": "the study or use of systems (especially computers and telecommunications) for storing, retrieving, and sending information.",
       "price": 59,
+      "semester": "1",
       "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQRr4nXxd79_kjM5wOm42i5oBhDBPd8R5975rk7RsTPBI0gPVGBpzIc8D0Vn6i2u-TD3hM&usqp=CAU",
       "time": "5:00",
       "totalstd": "12",
@@ -86,9 +94,9 @@
     "-NIxSQHAIOAPMB6QvCtX": {
       "c_name": "Network Programming",
       "days": "saturday, sunday",
-      "semester": "3",
-      "description": "description",
+      "description": "Computer network programming involves writing computer programs that enable processes to communicate with each other across a computer network.",
       "price": 252,
+      "semester": "3",
       "thumbnail": "https://images.velog.io/images/cromacampus2019/post/50c89198-81d6-4250-8dd0-79e636ce76ce/ef4efb7d2e92fd086e9e054d1e46ba3f[1].jpg",
       "time": "2:00",
       "totalstd": "12",
@@ -98,9 +106,9 @@
     "-NIxSQJQNaAqxM9lqAwP": {
       "c_name": "OOAD",
       "days": "wednesday,",
-      "semester": "2",
-      "description": "description",
+      "description": "\nObject-oriented analysis and design (OOAD) is a popular technical approach for analyzing, designing an application, system, or business by applying the object oriented paradigm and visual modeling throughout the development life cycles for better communication and product quality. ",
       "price": 58,
+      "semester": "2",
       "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ4iX-n5Dl735JNO6ecW23lRryNprWy9rxVGQ&usqp=CAU",
       "time": "6:00",
       "totalstd": "12",
@@ -110,9 +118,9 @@
     "-NIxSQMN0uMpFnY3A_ji": {
       "c_name": "Design Pattern",
       "days": "tuesday,",
-      "semester": "2",
-      "description": "description",
+      "description": "In software engineering, a design pattern is a general repeatable solution to a commonly occurring problem in software design.",
       "price": 89,
+      "semester": "2",
       "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ4iX-n5Dl735JNO6ecW23lRryNprWy9rxVGQ&usqp=CAU",
       "time": "6:00",
       "totalstd": "12",
@@ -122,7 +130,7 @@
     "-NIxSQPKAadW9u2nQHxz": {
       "c_name": "Programming Fundamental",
       "days": "monday,",
-      "description": "description",
+      "description": "This specialization develops strong programming fundamentals for learners who want to solve complex problems by writing computer programs. ",
       "price": 56,
       "semester": "1",
       "thumbnail": "https://websitelearners.com/content/uploads/2022/03/Speed-up-course-Thumbnail-01.1-1080x1920-1.jpg",
@@ -132,62 +140,36 @@
       "video2": "https://www.youtube.com/watch?v=s_oHYSB9UWs"
     }
   },
+  "RegCertificationCourse": {
+    "-NLHIAzJeoQI6DLyCLFl": {
+      "c_name": "SalesForce admin",
+      "uuid": "bAWvpmlUZSbFVsOhjJvjqkrKLge2"
+    }
+  },
+  "RegCourse": {
+    "-NLHEXbqH2C5gSqRfdZH": {
+      "c_name": "OOAD",
+      "uuid": "bAWvpmlUZSbFVsOhjJvjqkrKLge2"
+    }
+  },
   "Student": {
-    "-NIxEVDeG6Nl1Pjy5rt0": {
-      "contact": "2156154",
-      "f_name": "hamed",
+    "-NLHB8jyFqIf2TPPec2C": {
+      "contact": "02315123626",
+      "email": "sherry@gmail.com",
+      "f_name": "ahmed",
+      "password": "12345678",
+      "s_name": "sherry",
+      "semester": "1",
+      "uid": "oHBvWKZeCRXmLZvKYgT05inwcMC3"
+    },
+    "-NLHBbxiQCT-m07iBGT9": {
+      "contact": "03214568891",
+      "email": "haris@gmail.com",
+      "f_name": "khan",
+      "password": "12345678",
+      "s_name": "haris",
       "semester": "2",
-      "password": "12345678",
-      "s_name": "rashid"
-    },
-    "-NJ5Uaq6HVXBy9cTzZ7Z": {
-      "contact": "031111111111111",
-      "f_name": "Rafique",
-      "semester": "1",
-      "password": "abc1234",
-      "s_name": "Faizan"
-    },
-    "-NJzI4HovnyM7b3pTAtg": {
-      "contact": "03472889686",
-      "f_name": "Ajab Khan",
-      "semester": "1",
-      "password": "123456",
-      "s_name": "Haris Khan"
-    },
-    "-NKACCv7sxoCT-kOnTY4": {
-      "contact": "03421283622",
-      "f_name": "khan",
-      "semester": "1",
-      "password": "12345678",
-      "s_name": ""
-    },
-    "-NKACsd25ZDSrsSe65IC": {
-      "contact": "1234567890",
-      "f_name": "khan",
-      "semester": "1",
-      "password": "12345678",
-      "s_name": ""
-    },
-    "-NKCi5kwxqnHcm-a1c4l": {
-      "contact": "03418174793",
-      "f_name": "arsalan",
-      "semester": "1",
-      "password": "12345678",
-      "s_name": "Ali Khan"
-    },
-    "-NKDCVt418eYX5OqAPTN": {
-      "contact": "124534664",
-      "f_name": "hg",
-      "password": "12345678",
-      "semester": "1",
-      "s_name": "gh"
-    },
-    "-NKDcZ_a0Gi_ECLiPUXU": {
-      "contact": "03463201988",
-      "f_name": "Syed Muzaffar Ali",
-      "semester": "1",
-      "password": "Umair6750",
-      "s_name": "Syed Umair Ali"
+      "uid": "bAWvpmlUZSbFVsOhjJvjqkrKLge2"
     }
   },
   "Teacher": {

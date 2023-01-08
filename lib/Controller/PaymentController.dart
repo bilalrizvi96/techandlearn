@@ -117,15 +117,28 @@ import '../Services/Database.dart';
 class Payment extends GetxController {
   final user = FirebaseAuth.instance.currentUser;
   var val = Get.arguments;
-  regCourse() {
-    Database().regUser(c_name: val[5], uuid: user!.uid.toString());
-    Get.snackbar(
-      'Success',
-      "Course Register Successfully",
-      colorText: Colors.white,
-      backgroundColor: Colors.lightBlue,
-      icon: const Icon(Icons.add_alert),
-    );
+  regCourse(type) {
+    if (type == 0) {
+      Database().regCourseUser(c_name: val[5], uuid: user!.uid.toString());
+      Get.snackbar(
+        'Success',
+        "Course Register Successfully",
+        colorText: Colors.white,
+        backgroundColor: Colors.lightBlue,
+        icon: const Icon(Icons.add_alert),
+      );
+    } else {
+      Database().regCertificationCourseUser(
+          c_name: val[5], uuid: user!.uid.toString());
+      Get.snackbar(
+        'Success',
+        "Certification Course Register Successfully",
+        colorText: Colors.white,
+        backgroundColor: Colors.lightBlue,
+        icon: const Icon(Icons.add_alert),
+      );
+    }
+
     Get.offNamed(Routes.home);
   }
 
