@@ -22,7 +22,6 @@ class ClassScheduleScreen extends StatelessWidget {
         child: GetBuilder(
             init: courseDetailController,
             builder: (_) {
-              print(courseDetailController.regList.value[0].description);
               return Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.start,

@@ -19,6 +19,7 @@ class CertificationController extends GetxController {
   }
 
   getregCourse() async {
+    regList.value.clear();
     print('sherru');
     await databaseRef
         .ref('RegCertificationCourse')

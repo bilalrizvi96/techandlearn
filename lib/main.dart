@@ -20,6 +20,7 @@ Future<void> _firebaseMessagingBackgroundHandler(RemoteMessage message,
 }
 
 Future<void> main() async {
+  ///FIREBASE INITIALIZATION
   await GetStorage.init();
   WidgetsFlutterBinding.ensureInitialized();
   GestureBinding.instance.resamplingEnabled = true;
@@ -80,6 +81,7 @@ Future<void> main() async {
 class MyApp extends StatelessWidget {
   const MyApp({Key key}) : super(key: key);
 
+  ///STATE MANAGEMENT
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(

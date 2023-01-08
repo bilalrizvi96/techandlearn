@@ -12,6 +12,18 @@ class LoginController extends GetxController {
   var emailController = TextEditingController();
   var passwordController = TextEditingController();
   final user = FirebaseAuth.instance.currentUser;
+
+  @override
+  void onInit() {
+    super.onInit();
+    getStudent();
+  }
+
+  valueCheckBox(newValue) {
+    rememberValue = newValue!;
+    update();
+  }
+
   getStudent() async {
     print('haris'); // optionList.value.clear();
     await databaseRef.ref('Student').onValue.listen((DatabaseEvent event) {
@@ -27,15 +39,6 @@ class LoginController extends GetxController {
     });
     update();
   }
-
-  @override
-  void onInit() {
-    super.onInit();
-    getStudent();
-  }
-
-  valueCheckBox(newValue) {
-    rememberValue = newValue!;
-    update();
-  }
 }
+
+///local db token name semester

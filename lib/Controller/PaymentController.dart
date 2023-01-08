@@ -1,3 +1,5 @@
+///stripe
+
 // import 'dart:developer';
 //
 // import 'package:flutter/material.dart';
@@ -142,6 +144,7 @@ class Payment extends GetxController {
     Get.offNamed(Routes.home);
   }
 
+  ///razorpay
   // var razorpay = Razorpay();
   //
   // @override

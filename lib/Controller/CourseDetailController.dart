@@ -38,6 +38,7 @@ class CourseDetailController extends GetxController {
   } //   OptionModel(`name: 'Course 1', selected: true),
 
   getregCourse() async {
+    regList.value.clear();
     await databaseRef.ref('RegCourse').onValue.listen((DatabaseEvent event) {
       Map<String, dynamic>.from(event.snapshot.value as dynamic)
           .forEach((key, value) async {
