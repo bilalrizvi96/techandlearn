@@ -205,9 +205,23 @@ class RegisterScreen extends StatelessWidget {
                                     return null;
                                   },
                                   maxLines: 1,
-                                  obscureText: true,
+                                  obscureText: registrationController
+                                      .passwordVisible.value,
                                   decoration: InputDecoration(
                                     prefixIcon: const Icon(Icons.lock),
+                                    suffixIcon: GestureDetector(
+                                        onTap: () {
+                                          registrationController
+                                                  .passwordVisible.value =
+                                              !registrationController
+                                                  .passwordVisible.value;
+                                          registrationController.update();
+                                        },
+                                        child: registrationController
+                                                .passwordVisible.value
+                                            ? Icon(
+                                                Icons.visibility_off_outlined)
+                                            : Icon(Icons.visibility_outlined)),
                                     hintText: 'Enter your password',
                                     border: OutlineInputBorder(
                                       borderRadius: BorderRadius.circular(10),
@@ -227,9 +241,24 @@ class RegisterScreen extends StatelessWidget {
                                     return null;
                                   },
                                   maxLines: 1,
-                                  obscureText: true,
+                                  obscureText: registrationController
+                                      .confirmPasswordVisible.value,
                                   decoration: InputDecoration(
                                     prefixIcon: const Icon(Icons.lock),
+                                    suffixIcon: GestureDetector(
+                                        onTap: () {
+                                          registrationController
+                                                  .confirmPasswordVisible
+                                                  .value =
+                                              !registrationController
+                                                  .confirmPasswordVisible.value;
+                                          registrationController.update();
+                                        },
+                                        child: registrationController
+                                                .confirmPasswordVisible.value
+                                            ? Icon(
+                                                Icons.visibility_off_outlined)
+                                            : Icon(Icons.visibility_outlined)),
                                     hintText: 'Confirm password',
                                     border: OutlineInputBorder(
                                       borderRadius: BorderRadius.circular(10),
@@ -245,6 +274,7 @@ class RegisterScreen extends StatelessWidget {
                                       registrationController
                                           .registerationauth();
                                     }
+                                    print(registrationController.Loading.value);
                                   },
                                   child: Container(
                                     height: height / 15,
@@ -253,13 +283,29 @@ class RegisterScreen extends StatelessWidget {
                                         color: primarycolor,
                                         borderRadius:
                                             BorderRadius.circular(10.0)),
-                                    child: Center(
-                                      child: Text(
-                                        'Sign up',
-                                        style: GoogleFonts.poppins(
-                                            fontWeight: FontWeight.bold,
-                                            color: white),
-                                      ),
+                                    child: Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
+                                      children: [
+                                        Text(
+                                          'Sign up',
+                                          style: GoogleFonts.poppins(
+                                              fontWeight: FontWeight.bold,
+                                              color: white),
+                                        ),
+                                        if (registrationController
+                                            .Loading.value)
+                                          SizedBox(width: width / 20),
+                                        if (registrationController
+                                            .Loading.value)
+                                          SizedBox(
+                                            child: CircularProgressIndicator(
+                                              strokeWidth: 2.0,
+                                            ),
+                                            width: width / 28,
+                                            height: height / 45,
+                                          ),
+                                      ],
                                     ),
                                   ),
                                 ),

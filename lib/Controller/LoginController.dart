@@ -7,10 +7,12 @@ import 'package:techandlearn/Services/BaseUrl.dart';
 
 class LoginController extends GetxController {
   var rememberValue = false;
+  var Loading = false.obs;
   final databaseRef = FirebaseDatabase.instance;
   final auth = FirebaseAuth.instance;
   var emailController = TextEditingController();
   var passwordController = TextEditingController();
+  var passwordVisible = true.obs;
   final user = FirebaseAuth.instance.currentUser;
 
   @override

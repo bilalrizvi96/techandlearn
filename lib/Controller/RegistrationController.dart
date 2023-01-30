@@ -10,8 +10,11 @@ import 'package:speech_to_text/speech_to_text.dart';
 
 class RegistrationController extends GetxController {
   final auth = FirebaseAuth.instance;
+  var Loading = false.obs;
   var emailController = TextEditingController();
   var passwordController = TextEditingController();
+  var passwordVisible = true.obs;
+  var confirmPasswordVisible = true.obs;
   var c_passwordController = TextEditingController();
   var f_nameController = TextEditingController();
   var contactController = TextEditingController();
@@ -92,16 +95,33 @@ class RegistrationController extends GetxController {
 
   registerationauth() async {
     if (passwordController.text == c_passwordController.text) {
-      final newUser = await auth.createUserWithEmailAndPassword(
-          email: emailController.text.toString(),
-          password: passwordController.text.toString());
-      if (newUser != null) {
-        addStudent();
+      if (c_passwordController.text.length >= 8) {
+        Loading.value = true;
+        update();
+        final newUser = await auth.createUserWithEmailAndPassword(
+            email: emailController.text.toString(),
+            password: passwordController.text.toString());
+        if (newUser != null) {
+          addStudent();
+          Loading.value = false;
+          update();
+          Get.snackbar(
+            'Success',
+            "Register Successfully",
+            colorText: Colors.white,
+            backgroundColor: Colors.lightBlue,
+            icon: const Icon(Icons.add_alert),
+          );
+          Get.offAllNamed(Routes.login);
+        }
+        Loading.value = false;
+        update();
+      } else {
         Get.snackbar(
-          'Success',
-          "Register Successfully",
+          'Error',
+          "Password should be at least 8 characters",
           colorText: Colors.white,
-          backgroundColor: Colors.lightBlue,
+          backgroundColor: Colors.red,
           icon: const Icon(Icons.add_alert),
         );
       }

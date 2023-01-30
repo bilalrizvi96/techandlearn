@@ -97,9 +97,21 @@ class LoginScreen extends StatelessWidget {
                                   return null;
                                 },
                                 maxLines: 1,
-                                obscureText: true,
+                                obscureText:
+                                    loginController.passwordVisible.value,
                                 decoration: InputDecoration(
                                   prefixIcon: const Icon(Icons.lock),
+                                  suffixIcon: GestureDetector(
+                                      onTap: () {
+                                        loginController.passwordVisible.value =
+                                            !loginController
+                                                .passwordVisible.value;
+                                        loginController.update();
+                                      },
+                                      child: loginController
+                                              .passwordVisible.value
+                                          ? Icon(Icons.visibility_off_outlined)
+                                          : Icon(Icons.visibility_outlined)),
                                   hintText: 'Enter your password',
                                   focusedBorder: OutlineInputBorder(
                                     borderRadius: BorderRadius.circular(10),
@@ -130,6 +142,8 @@ class LoginScreen extends StatelessWidget {
                               GestureDetector(
                                 onTap: () async {
                                   if (formKey.currentState!.validate()) {
+                                    loginController.Loading.value = true;
+                                    loginController.update();
                                     try {
                                       final user = await loginController.auth
                                           .signInWithEmailAndPassword(
@@ -152,6 +166,8 @@ class LoginScreen extends StatelessWidget {
                                           backgroundColor: Colors.lightBlue,
                                           icon: const Icon(Icons.done),
                                         );
+                                        loginController.Loading.value = false;
+                                        loginController.update();
                                         Get.offAllNamed(Routes.home);
                                       } else {
                                         Get.snackbar(
@@ -161,6 +177,8 @@ class LoginScreen extends StatelessWidget {
                                           backgroundColor: Colors.red,
                                           icon: const Icon(Icons.add_alert),
                                         );
+                                        loginController.Loading.value = false;
+                                        loginController.update();
                                       }
                                     } catch (e) {
                                       print(e);
@@ -177,6 +195,8 @@ class LoginScreen extends StatelessWidget {
                                         backgroundColor: Colors.red,
                                         icon: const Icon(Icons.add_alert),
                                       );
+                                      loginController.Loading.value = false;
+                                      loginController.update();
                                     }
                                   }
                                 },
@@ -188,11 +208,27 @@ class LoginScreen extends StatelessWidget {
                                       borderRadius:
                                           BorderRadius.circular(10.0)),
                                   child: Center(
-                                    child: Text(
-                                      'Sign in',
-                                      style: GoogleFonts.poppins(
-                                          fontWeight: FontWeight.bold,
-                                          color: white),
+                                    child: Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
+                                      children: [
+                                        Text(
+                                          'Sign in',
+                                          style: GoogleFonts.poppins(
+                                              fontWeight: FontWeight.bold,
+                                              color: white),
+                                        ),
+                                        if (loginController.Loading.value)
+                                          SizedBox(width: width / 20),
+                                        if (loginController.Loading.value)
+                                          SizedBox(
+                                            child: CircularProgressIndicator(
+                                              strokeWidth: 2.0,
+                                            ),
+                                            width: width / 28,
+                                            height: height / 45,
+                                          ),
+                                      ],
                                     ),
                                   ),
                                 ),
