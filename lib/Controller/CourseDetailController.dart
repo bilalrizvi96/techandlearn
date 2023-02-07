@@ -7,6 +7,7 @@ import 'package:techandlearn/Services/Database.dart';
 import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 
 import '../Model/OptionModel.dart';
+import '../Routes/Routes.dart';
 
 class CourseDetailController extends GetxController {
   RxList<CourseModel> optionList = <CourseModel>[].obs;
@@ -22,23 +23,68 @@ class CourseDetailController extends GetxController {
     getCourse();
 
     videoMetaData = YoutubePlayerController(
-      initialVideoId: 's_oHYSB9UWs',
+      initialVideoId: 'm17XxsjRiqk',
       flags: YoutubePlayerFlags(
         autoPlay: true,
-        mute: true,
+        mute: false,
       ),
     );
-    videoMetaData2 = YoutubePlayerController(
-      initialVideoId: 'zrsqhcVpaE0',
-      flags: YoutubePlayerFlags(
-        autoPlay: false,
-        mute: true,
-      ),
-    );
+    // videoMetaData2 = YoutubePlayerController(
+    //   initialVideoId: 'zrsqhcVpaE0',
+    //   flags: YoutubePlayerFlags(
+    //     autoPlay: false,
+    //     mute: true,
+    //   ),
+    // );
   } //   OptionModel(`name: 'Course 1', selected: true),
 
+  getCourseVideo(name) async {
+    await databaseRef.ref('RegCourse').onValue.listen((DatabaseEvent event) {
+      Map<String, dynamic>.from(event.snapshot.value as dynamic)
+          .forEach((key, value) async {
+        if (user!.uid.toString() == value['uuid']) {
+          await databaseRef
+              .ref('Courses')
+              .onValue
+              .listen((DatabaseEvent event) {
+            Map<String, dynamic>.from(event.snapshot.value as dynamic)
+                .forEach((key, value1) {
+              if (name == value1['c_name']) {
+                print(value['video']);
+                videoMetaData = YoutubePlayerController(
+                  initialVideoId: value1['video'],
+                  flags: YoutubePlayerFlags(
+                    autoPlay: true,
+                    mute: false,
+                  ),
+                );
+                update();
+              }
+            });
+          });
+        }
+
+        update();
+      });
+    });
+    Get.toNamed(Routes.coursevideo);
+    update();
+  }
+
+  dropCourse(name) {
+    DatabaseReference ref = FirebaseDatabase.instance.ref("RegCourse");
+    ref.orderByChild('c_name').equalTo(name).onValue.listen((event) {
+      Map<String, dynamic>.from(event.snapshot.value as dynamic)
+          .forEach((key, value) async {
+        print('dawar');
+        await ref.child(key).remove();
+        update();
+      });
+    });
+  }
+
   getregCourse() async {
-    regList.value.clear();
+    regList.clear();
     await databaseRef.ref('RegCourse').onValue.listen((DatabaseEvent event) {
       Map<String, dynamic>.from(event.snapshot.value as dynamic)
           .forEach((key, value) async {

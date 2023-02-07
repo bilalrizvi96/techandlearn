@@ -137,7 +137,7 @@ class RegistrationController extends GetxController {
   }
 
   addStudent() {
-    var semester = Random().nextInt(8);
+    var semester = Random().nextInt(3);
     Database().addStudent(
         contact: contactController.text.toString(),
         f_name: f_nameController.text.toString(),

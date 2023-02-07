@@ -38,7 +38,7 @@ class RegistraterCourseScreen extends StatelessWidget {
                     topLeft: Radius.circular(10.0))),
             child: Center(
               child: Text(
-                'Buy Now',
+                'Add Course7',
                 style: GoogleFonts.poppins(
                     fontWeight: FontWeight.bold, color: white),
               ),

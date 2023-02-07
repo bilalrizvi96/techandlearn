@@ -67,16 +67,16 @@ class CourseVideo extends StatelessWidget {
                 SizedBox(
                   height: 50,
                 ),
-                YoutubePlayer(
-                  controller: courseDetailController.videoMetaData2!,
-                  showVideoProgressIndicator: true,
-
-                  // videoProgressIndicatorColor: Colors.amber,
-                  // progressColors: Colors.accents,
-                  //   onReady () {
-                  // _controller.addListener(listener);
-                  // },
-                ),
+                // YoutubePlayer(
+                //   controller: courseDetailController.videoMetaData2!,
+                //   showVideoProgressIndicator: true,
+                //
+                //   // videoProgressIndicatorColor: Colors.amber,
+                //   // progressColors: Colors.accents,
+                //   //   onReady () {
+                //   // _controller.addListener(listener);
+                //   // },
+                // ),
               ],
             ),
           ),

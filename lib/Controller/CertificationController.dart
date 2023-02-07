@@ -18,6 +18,19 @@ class CertificationController extends GetxController {
     getregCourse();
   }
 
+  dropCourse(name) {
+    DatabaseReference ref =
+        FirebaseDatabase.instance.ref("RegCertificationCourse");
+    ref.orderByChild('c_name').equalTo(name).onValue.listen((event) {
+      Map<String, dynamic>.from(event.snapshot.value as dynamic)
+          .forEach((key, value) async {
+        print('dawar');
+        await ref.child(key).remove();
+        update();
+      });
+    });
+  }
+
   getregCourse() async {
     regList.value.clear();
     print('sherru');

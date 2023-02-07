@@ -1,14 +1,5 @@
 {
   "CertificationCourses": {
-    "-NIxj4xSCilaTcaS6Kt4": {
-      "c_name": "Cloud Computing",
-      "days": "friday,thursday",
-      "description": "Simply put, cloud computing is the delivery of computing services—including servers, storage, databases, networking, software, analytics, and intelligence  ",
-      "price": 12,
-      "thumbnail": "https://images.pexels.com/photos/8460453/pexels-photo-8460453.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-      "time": "12:30",
-      "totalstd": "3"
-    },
     "-NIxj4xSCilaTcaS6Kt3": {
       "c_name": "Edge Computing",
       "days": "friday,thursday",
@@ -17,6 +8,15 @@
       "thumbnail": "https://images.pexels.com/photos/8460453/pexels-photo-8460453.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
       "time": "11:30",
       "totalstd": "5"
+    },
+    "-NIxj4xSCilaTcaS6Kt4": {
+      "c_name": "Cloud Computing",
+      "days": "friday,thursday",
+      "description": "Simply put, cloud computing is the delivery of computing services—including servers, storage, databases, networking, software, analytics, and intelligence  ",
+      "price": 12,
+      "thumbnail": "https://images.pexels.com/photos/8460453/pexels-photo-8460453.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+      "time": "12:30",
+      "totalstd": "3"
     },
     "-NIxj6RID4UqaQ2dg_j7": {
       "c_name": "SalesForce admin",
@@ -56,6 +56,17 @@
     }
   },
   "Courses": {
+    "-NIxQy-HyaodKIVKlgfD": {
+      "c_name": "NC",
+      "days": "monday,tuesday,friday",
+      "description": "An operating system (OS) is the program that, after being initially loaded into the computer by a boot program, manages all of the other application programs in a computer. .",
+      "price": 12,
+      "semester": "1",
+      "thumbnail": "https://images.pexels.com/photos/8460453/pexels-photo-8460453.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+      "time": "12:30",
+      "totalstd": "4",
+      "video  ": "m17XxsjRiqk"
+    },
     "-NIxQy-HyaodKIVKlgfE": {
       "c_name": "Operating System",
       "days": "monday,tuesday,friday",
@@ -65,8 +76,7 @@
       "thumbnail": "https://images.pexels.com/photos/8460453/pexels-photo-8460453.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
       "time": "12:30",
       "totalstd": "4",
-      "video1": "https://www.youtube.com/watch?v=s_oHYSB9UWs",
-      "video2": "https://www.youtube.com/watch?v=s_oHYSB9UWs"
+      "video": "vBURTt97EkA"
     },
     "-NIxRRmkruH7NcJr-nT-": {
       "c_name": "DM",
@@ -77,8 +87,7 @@
       "thumbnail": "https://cdn6.f-cdn.com/contestentries/1162950/18299824/59ef996d1981d_thumb900.jpg",
       "time": "1:00",
       "totalstd": "4",
-      "video1": "https://www.youtube.com/watch?v=s_oHYSB9UWs",
-      "video2": "https://www.youtube.com/watch?v=s_oHYSB9UWs"
+      "video": "p2b2Vb-cYCs"
     },
     "-NIxSQEG00qSAz7vR6TO": {
       "c_name": "IICT",
@@ -89,8 +98,7 @@
       "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQRr4nXxd79_kjM5wOm42i5oBhDBPd8R5975rk7RsTPBI0gPVGBpzIc8D0Vn6i2u-TD3hM&usqp=CAU",
       "time": "5:00",
       "totalstd": "12",
-      "video1": "https://www.youtube.com/watch?v=s_oHYSB9UWs",
-      "video2": "https://www.youtube.com/watch?v=s_oHYSB9UWs"
+      "video": "TFJ0NnGx6d8"
     },
     "-NIxSQHAIOAPMB6QvCtX": {
       "c_name": "Network Programming",
@@ -101,8 +109,7 @@
       "thumbnail": "https://images.velog.io/images/cromacampus2019/post/50c89198-81d6-4250-8dd0-79e636ce76ce/ef4efb7d2e92fd086e9e054d1e46ba3f[1].jpg",
       "time": "2:00",
       "totalstd": "12",
-      "video": "https://www.youtube.com/watch?v=s_oHYSB9UWs",
-      "video2": "https://www.youtube.com/watch?v=s_oHYSB9UWs"
+      "video": "FGdiSJakIS4"
     },
     "-NIxSQJQNaAqxM9lqAwP": {
       "c_name": "OOAD",
@@ -113,8 +120,8 @@
       "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ4iX-n5Dl735JNO6ecW23lRryNprWy9rxVGQ&usqp=CAU",
       "time": "6:00",
       "totalstd": "12",
-      "video1": "https://www.youtube.com/watch?v=58oJJmxjKaM&t=245s",
-      "video2": "https://www.youtube.com/watch?v=s_oHYSB9UWs"
+      "video": "GZX4Paj_p14"
+
     },
     "-NIxSQMN0uMpFnY3A_ji": {
       "c_name": "Design Pattern",
@@ -125,8 +132,8 @@
       "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ4iX-n5Dl735JNO6ecW23lRryNprWy9rxVGQ&usqp=CAU",
       "time": "6:00",
       "totalstd": "12",
-      "video1": "https://www.youtube.com/watch?v=s_oHYSB9UWs",
-      "video2": "https://www.youtube.com/watch?v=s_oHYSB9UWs"
+      "video": "tv-_1er1mWI"
+
     },
     "-NIxSQPKAadW9u2nQHxz": {
       "c_name": "Programming Fundamental",
@@ -137,20 +144,39 @@
       "thumbnail": "https://websitelearners.com/content/uploads/2022/03/Speed-up-course-Thumbnail-01.1-1080x1920-1.jpg",
       "time": "9:00",
       "totalstd": "12",
-      "video1": "https://www.youtube.com/watch?v=s_oHYSB9UWs",
-      "video2": "https://www.youtube.com/watch?v=s_oHYSB9UWs"
+      "video": "F7CWjuaC6gw"
     }
   },
   "RegCertificationCourse": {
     "-NLHIAzJeoQI6DLyCLFl": {
       "c_name": "SalesForce admin",
       "uuid": "bAWvpmlUZSbFVsOhjJvjqkrKLge2"
+    },
+    "-NLM1G4sGPHUQoGkSIVZ": {
+      "c_name": "operating system",
+      "uuid": "QB1hiARn2obFKLSFjyET6YVsvnL2"
+    },
+    "-NLM2YEEDF8bNgAQ8xEv": {
+      "c_name": "SalesForce admin",
+      "uuid": "oHBvWKZeCRXmLZvKYgT05inwcMC3"
+    },
+    "-NLM2dLeCrklG4ufMT6r": {
+      "c_name": "Edge Computing",
+      "uuid": "oHBvWKZeCRXmLZvKYgT05inwcMC3"
+    },
+    "-NNXIHRI81WCO1XfgxgQ": {
+      "c_name": "SalesForce admin",
+      "uuid": "bAWvpmlUZSbFVsOhjJvjqkrKLge2"
+    },
+    "-NNXILPVOQPmMTCW-fmJ": {
+      "c_name": "operating system",
+      "uuid": "bAWvpmlUZSbFVsOhjJvjqkrKLge2"
     }
   },
   "RegCourse": {
-    "-NLHEXbqH2C5gSqRfdZH": {
-      "c_name": "OOAD",
-      "uuid": "bAWvpmlUZSbFVsOhjJvjqkrKLge2"
+    "-NNcBoYJD0d-nese2RoS": {
+      "c_name": "Operating System",
+      "uuid": "lpsuvZ0vNthw7HLWfo7NmFJKifu2"
     }
   },
   "Student": {
@@ -169,8 +195,62 @@
       "f_name": "khan",
       "password": "12345678",
       "s_name": "haris",
-      "semester": "2",
+      "semester": "1",
       "uid": "bAWvpmlUZSbFVsOhjJvjqkrKLge2"
+    },
+    "-NLLvNWWaJsUtpDBPj_y": {
+      "contact": "03412587968",
+      "email": "osama@gmail.com",
+      "f_name": "meer",
+      "password": "12345678",
+      "s_name": "osama",
+      "semester": "2",
+      "uid": "IiIMRCWSwlUwet88Cy0PYAaZ2yk2"
+    },
+    "-NLM0vjTVdjnAG4BPwKo": {
+      "contact": "03472588516",
+      "email": "umair.ali@gmail.com",
+      "f_name": "Ali",
+      "password": "12345678",
+      "s_name": "Umair",
+      "semester": "3",
+      "uid": "QB1hiARn2obFKLSFjyET6YVsvnL2"
+    },
+    "-NN1fxP3f41EwVPoa-B_": {
+      "contact": "2154545",
+      "email": "mark@gmail.com",
+      "f_name": "Mark",
+      "password": "12345678",
+      "s_name": "Mark",
+      "semester": "1",
+      "uid": "HbYu80mJ9kUi3IEC3oR1kZt3kAn1"
+    },
+    "-NN1y7h4pzYFbKJGlwCm": {
+      "contact": "56465456",
+      "email": "mark1@gmail.com",
+      "f_name": "Mark",
+      "password": "12345678",
+      "s_name": "Mark",
+      "semester": "5",
+      "uid": "6ctCP8yFLBQykLHe3rFjYBsU1Uv2"
+    },
+    "-NNbtn9feGUYZDO3_5Uu": {
+      "contact": "212345132",
+      "email": "alex@gmail.com",
+      "f_name": "Alex",
+      "password": "123456789",
+      "s_name": "Alex",
+      "semester": "6",
+      "uid": "ylyHDjUcA1MYmjjtrjKRhLlQdFF2"
+    },
+    "-NNc5LJi7m3uMuHdO48p": {
+      "contact": "3215465448",
+      "email": "bilal@gmail.com",
+      "f_name": "Hasssan",
+      "password": "123456789",
+      "s_name": "bilal",
+      "semester": "1",
+      "uid": "lpsuvZ0vNthw7HLWfo7NmFJKifu2"
     }
   },
   "Teacher": {
@@ -187,4 +267,5 @@
     },
     "nic": 4231313131313
   }
+
 }

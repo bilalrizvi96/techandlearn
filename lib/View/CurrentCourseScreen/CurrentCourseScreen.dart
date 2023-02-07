@@ -9,7 +9,6 @@ import '../../Routes/Routes.dart';
 
 class CurrentCourseScreen extends StatelessWidget {
   CurrentCourseScreen({Key? key}) : super(key: key);
-
   CourseDetailController courseDetailController =
       Get.put(CourseDetailController());
   @override
@@ -95,8 +94,15 @@ class CurrentCourseScreen extends StatelessWidget {
                                 courseDetailController.regList.value.length,
                             itemBuilder: (_, index) => GestureDetector(
                               onTap: () {
-                                Get.toNamed(Routes.coursevideo);
+                                courseDetailController.getCourseVideo(
+                                    courseDetailController
+                                        .regList.value[index].name);
                                 courseDetailController.courseSelection(index);
+                              },
+                              onLongPress: () {
+                                courseDetailController.dropCourse(
+                                    courseDetailController
+                                        .regList.value[index].name);
                               },
                               child: Container(
                                 height: height / 20,
@@ -127,6 +133,7 @@ class CurrentCourseScreen extends StatelessWidget {
                                           // Colors.black.withOpacity(0.80)
                                         ),
                                       ),
+                                      Spacer(),
                                       SizedBox(
                                         height: height / 80,
                                       ),
