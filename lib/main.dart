@@ -13,11 +13,11 @@ import 'Routes/Routes.dart';
 import 'Services/BaseUrl.dart';
 import 'View/addcourse.dart';
 
-Future<void> _firebaseMessagingBackgroundHandler(RemoteMessage message,
-    {BuildContext context}) async {
-  await Firebase.initializeApp();
-  print('Handling a background message ${message.messageId}');
-}
+// Future<void> _firebaseMessagingBackgroundHandler(RemoteMessage message,
+//     {BuildContext context}) async {
+//   await Firebase.initializeApp();
+//   print('Handling a background message ${message.messageId}');
+// }
 
 Future<void> main() async {
   ///FIREBASE INITIALIZATION
@@ -32,48 +32,8 @@ Future<void> main() async {
           appId: '1:660776089340:android:0c16f839c1b3d33211c979',
           messagingSenderId: '660776089340',
           projectId: 'techlearn-e15a3'));
-  // NotificationSettings settings =
-  //     await FirebaseMessaging.instance.requestPermission(
-  //   alert: true,
-  //   announcement: false,
-  //   badge: true,
-  //   carPlay: false,
-  //   criticalAlert: true,
-  //   provisional: true,
-  //   sound: true,
-  // );
-  // FirebaseMessaging.onBackgroundMessage(_firebaseMessagingBackgroundHandler);
-  // await FirebaseMessaging.instance
-  //     .setForegroundNotificationPresentationOptions(
-  //   alert: true,
-  //   badge: true,
-  //   sound: true,
-  // );
+
   await Firebase.initializeApp();
-  // else {
-  //   WidgetsFlutterBinding.ensureInitialized();
-  //   GestureBinding.instance?.resamplingEnabled = true;
-  //   WidgetsFlutterBinding.ensureInitialized();
-  //   await Firebase.initializeApp();
-  //
-  //   NotificationSettings settings =
-  //       await FirebaseMessaging.instance.requestPermission(
-  //     alert: true,
-  //     announcement: false,
-  //     badge: true,
-  //     carPlay: false,
-  //     criticalAlert: true,
-  //     provisional: true,
-  //     sound: true,
-  //   );
-  //   FirebaseMessaging.onBackgroundMessage(_firebaseMessagingBackgroundHandler);
-  //   await FirebaseMessaging.instance
-  //       .setForegroundNotificationPresentationOptions(
-  //     alert: true,
-  //     badge: true,
-  //     sound: true,
-  //   );
-  // }
 
   runApp(MyApp());
 }
@@ -90,7 +50,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       defaultTransition: Transition.native,
-      title: 'Tech and Learn',
+
       transitionDuration: Duration(milliseconds: 500),
       debugShowCheckedModeBanner: false,
       // home: AddCourse(),

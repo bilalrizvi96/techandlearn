@@ -22,13 +22,13 @@ class CourseDetailController extends GetxController {
     getregCourse();
     getCourse();
 
-    videoMetaData = YoutubePlayerController(
-      initialVideoId: 'm17XxsjRiqk',
-      flags: YoutubePlayerFlags(
-        autoPlay: true,
-        mute: false,
-      ),
-    );
+    // videoMetaData = YoutubePlayerController(
+    //   initialVideoId: 'm17XxsjRiqk',
+    //   flags: YoutubePlayerFlags(
+    //     autoPlay: true,
+    //     mute: false,
+    //   ),
+    // );
     // videoMetaData2 = YoutubePlayerController(
     //   initialVideoId: 'zrsqhcVpaE0',
     //   flags: YoutubePlayerFlags(
