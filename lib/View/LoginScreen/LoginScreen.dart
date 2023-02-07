@@ -144,6 +144,8 @@ class LoginScreen extends StatelessWidget {
                                   if (formKey.currentState!.validate()) {
                                     loginController.Loading.value = true;
                                     loginController.update();
+
+                                    ///login work
                                     try {
                                       final user = await loginController.auth
                                           .signInWithEmailAndPassword(

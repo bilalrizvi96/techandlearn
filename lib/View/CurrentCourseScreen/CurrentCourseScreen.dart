@@ -100,9 +100,28 @@ class CurrentCourseScreen extends StatelessWidget {
                                 courseDetailController.courseSelection(index);
                               },
                               onLongPress: () {
-                                courseDetailController.dropCourse(
-                                    courseDetailController
-                                        .regList.value[index].name);
+                                Get.defaultDialog(
+                                  title: "",
+                                  content: GestureDetector(
+                                    onTap: () {
+                                      courseDetailController.dropCourse(
+                                          courseDetailController
+                                              .regList.value[index].name);
+                                      Get.back();
+                                    },
+                                    child: Container(
+                                      width: 150,
+                                      height: 60,
+                                      color: secondarycolor,
+                                      child: Center(
+                                          child: Text(
+                                        "Drop Course",
+                                        style: TextStyle(
+                                            color: white, fontSize: 20),
+                                      )),
+                                    ),
+                                  ),
+                                );
                               },
                               child: Container(
                                 height: height / 20,

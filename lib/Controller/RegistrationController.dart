@@ -79,6 +79,7 @@ class RegistrationController extends GetxController {
     update();
   }
 
+  ///nlp work
   valueCheck(value) {
     print(speechToText.isNotListening);
     if (speechToText.isNotListening) {
@@ -136,6 +137,7 @@ class RegistrationController extends GetxController {
     }
   }
 
+  ///registration
   addStudent() {
     var semester = Random().nextInt(3);
     Database().addStudent(

@@ -11,6 +11,8 @@ class HomeController extends GetxController {
     OptionModel(name: 'Class Schedule', selected: false),
     OptionModel(name: 'About Us', selected: false),
   ];
+
+  ///routing here
   courseSelection(index) {
     if (index == 0) {
       Get.toNamed(Routes.coursedetail);
